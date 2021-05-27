@@ -9,6 +9,8 @@ on:
 # 任务
 jobs:
   build-and-deploy:
+    env:
+      NODE_OPTIONS: '--max_old_space_size=4096'
     # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
