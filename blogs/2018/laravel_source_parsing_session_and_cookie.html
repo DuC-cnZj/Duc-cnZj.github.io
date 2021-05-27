@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>laravel 源码解析之session和cookie | DUC&#39;S Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Vue-powered Static Site Generator">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.ba88b123.js" as="script"><link rel="preload" href="/assets/js/5.2bd63de2.js" as="script"><link rel="preload" href="/assets/js/1.e5a4237d.js" as="script"><link rel="preload" href="/assets/js/37.83794953.js" as="script"><link rel="prefetch" href="/assets/js/10.d8d2a28c.js"><link rel="prefetch" href="/assets/js/100.5bd3cdff.js"><link rel="prefetch" href="/assets/js/101.25b2bd69.js"><link rel="prefetch" href="/assets/js/102.26ed66c6.js"><link rel="prefetch" href="/assets/js/103.8732c317.js"><link rel="prefetch" href="/assets/js/104.f6a32ad7.js"><link rel="prefetch" href="/assets/js/105.cc5e86ad.js"><link rel="prefetch" href="/assets/js/106.e235bd02.js"><link rel="prefetch" href="/assets/js/107.be686984.js"><link rel="prefetch" href="/assets/js/108.a6425db4.js"><link rel="prefetch" href="/assets/js/109.c9b0b253.js"><link rel="prefetch" href="/assets/js/11.24fb7a96.js"><link rel="prefetch" href="/assets/js/110.6b56b069.js"><link rel="prefetch" href="/assets/js/111.35d11e29.js"><link rel="prefetch" href="/assets/js/112.9495ccf3.js"><link rel="prefetch" href="/assets/js/113.6edc17d9.js"><link rel="prefetch" href="/assets/js/114.bf2ab61c.js"><link rel="prefetch" href="/assets/js/115.aae62df1.js"><link rel="prefetch" href="/assets/js/116.a2820c0a.js"><link rel="prefetch" href="/assets/js/117.b7a11c19.js"><link rel="prefetch" href="/assets/js/118.843a7416.js"><link rel="prefetch" href="/assets/js/119.7a5c2d7e.js"><link rel="prefetch" href="/assets/js/12.aa2cd533.js"><link rel="prefetch" href="/assets/js/120.d264ed0c.js"><link rel="prefetch" href="/assets/js/121.a3dc713c.js"><link rel="prefetch" href="/assets/js/122.d8986c7e.js"><link rel="prefetch" href="/assets/js/13.22ed5907.js"><link rel="prefetch" href="/assets/js/14.c5b3b3dd.js"><link rel="prefetch" href="/assets/js/15.d0f6e033.js"><link rel="prefetch" href="/assets/js/16.8fd740c8.js"><link rel="prefetch" href="/assets/js/17.ec2fa3a6.js"><link rel="prefetch" href="/assets/js/18.d5fac85e.js"><link rel="prefetch" href="/assets/js/19.c5911735.js"><link rel="prefetch" href="/assets/js/20.03059cfc.js"><link rel="prefetch" href="/assets/js/21.55e42ef2.js"><link rel="prefetch" href="/assets/js/22.f62e39c8.js"><link rel="prefetch" href="/assets/js/23.fbcfd5f6.js"><link rel="prefetch" href="/assets/js/24.e9f442b3.js"><link rel="prefetch" href="/assets/js/25.686cab41.js"><link rel="prefetch" href="/assets/js/26.6970e886.js"><link rel="prefetch" href="/assets/js/27.f734bf64.js"><link rel="prefetch" href="/assets/js/28.f92a44ce.js"><link rel="prefetch" href="/assets/js/29.861135f7.js"><link rel="prefetch" href="/assets/js/3.1cee50f2.js"><link rel="prefetch" href="/assets/js/30.72607cab.js"><link rel="prefetch" href="/assets/js/31.1aadcdb6.js"><link rel="prefetch" href="/assets/js/32.5eff8fe9.js"><link rel="prefetch" href="/assets/js/33.608ebf0b.js"><link rel="prefetch" href="/assets/js/34.554b9575.js"><link rel="prefetch" href="/assets/js/35.88477f57.js"><link rel="prefetch" href="/assets/js/36.2c5d59b0.js"><link rel="prefetch" href="/assets/js/38.58ce3a69.js"><link rel="prefetch" href="/assets/js/39.4a067206.js"><link rel="prefetch" href="/assets/js/4.c93ea189.js"><link rel="prefetch" href="/assets/js/40.7bfcd3c3.js"><link rel="prefetch" href="/assets/js/41.179aa8b4.js"><link rel="prefetch" href="/assets/js/42.75a5b251.js"><link rel="prefetch" href="/assets/js/43.16e44f17.js"><link rel="prefetch" href="/assets/js/44.d8be4b11.js"><link rel="prefetch" href="/assets/js/45.5519f4e8.js"><link rel="prefetch" href="/assets/js/46.e29b1183.js"><link rel="prefetch" href="/assets/js/47.e67f4e23.js"><link rel="prefetch" href="/assets/js/48.03051f9b.js"><link rel="prefetch" href="/assets/js/49.ef301a21.js"><link rel="prefetch" href="/assets/js/50.f2d1b294.js"><link rel="prefetch" href="/assets/js/51.472ec714.js"><link rel="prefetch" href="/assets/js/52.7bb76953.js"><link rel="prefetch" href="/assets/js/53.985ed103.js"><link rel="prefetch" href="/assets/js/54.21bc6881.js"><link rel="prefetch" href="/assets/js/55.5a38347c.js"><link rel="prefetch" href="/assets/js/56.627fb483.js"><link rel="prefetch" href="/assets/js/57.e1dedf22.js"><link rel="prefetch" href="/assets/js/58.a77ffd50.js"><link rel="prefetch" href="/assets/js/59.ea75b7f0.js"><link rel="prefetch" href="/assets/js/6.0b07050c.js"><link rel="prefetch" href="/assets/js/60.41e92b11.js"><link rel="prefetch" href="/assets/js/61.e6926c05.js"><link rel="prefetch" href="/assets/js/62.271b57ae.js"><link rel="prefetch" href="/assets/js/63.72e763b1.js"><link rel="prefetch" href="/assets/js/64.9b6ddfde.js"><link rel="prefetch" href="/assets/js/65.991a3739.js"><link rel="prefetch" href="/assets/js/66.19cea808.js"><link rel="prefetch" href="/assets/js/67.02afc173.js"><link rel="prefetch" href="/assets/js/68.97a401f9.js"><link rel="prefetch" href="/assets/js/69.b64d8216.js"><link rel="prefetch" href="/assets/js/7.cb2b2c8b.js"><link rel="prefetch" href="/assets/js/70.4326ce81.js"><link rel="prefetch" href="/assets/js/71.18ca7cbb.js"><link rel="prefetch" href="/assets/js/72.292c2c55.js"><link rel="prefetch" href="/assets/js/73.b184d0e8.js"><link rel="prefetch" href="/assets/js/74.9d135ab2.js"><link rel="prefetch" href="/assets/js/75.f2a7c54b.js"><link rel="prefetch" href="/assets/js/76.944d45da.js"><link rel="prefetch" href="/assets/js/77.4686b4d3.js"><link rel="prefetch" href="/assets/js/78.33ac81aa.js"><link rel="prefetch" href="/assets/js/79.dea3d9c8.js"><link rel="prefetch" href="/assets/js/8.ab46e0f5.js"><link rel="prefetch" href="/assets/js/80.46aa7414.js"><link rel="prefetch" href="/assets/js/81.347bdd7c.js"><link rel="prefetch" href="/assets/js/82.993fcb39.js"><link rel="prefetch" href="/assets/js/83.bd93928e.js"><link rel="prefetch" href="/assets/js/84.b9d47f5c.js"><link rel="prefetch" href="/assets/js/85.a03f770a.js"><link rel="prefetch" href="/assets/js/86.f056179e.js"><link rel="prefetch" href="/assets/js/87.463036e8.js"><link rel="prefetch" href="/assets/js/88.418f3543.js"><link rel="prefetch" href="/assets/js/89.d26a7b2e.js"><link rel="prefetch" href="/assets/js/9.b6485ce4.js"><link rel="prefetch" href="/assets/js/90.9e762339.js"><link rel="prefetch" href="/assets/js/91.20ef3a87.js"><link rel="prefetch" href="/assets/js/92.cc469314.js"><link rel="prefetch" href="/assets/js/93.2e1705b4.js"><link rel="prefetch" href="/assets/js/94.fba85e0d.js"><link rel="prefetch" href="/assets/js/95.1b0c3fda.js"><link rel="prefetch" href="/assets/js/96.6b9d810d.js"><link rel="prefetch" href="/assets/js/97.dc9fd59e.js"><link rel="prefetch" href="/assets/js/98.d6803ea6.js"><link rel="prefetch" href="/assets/js/99.e03b6036.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>duc</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>duc's blog</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="DUC'S Blog" class="logo"> <span class="site-name">DUC'S Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    duc
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>111</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>115</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>laravel 源码解析之session和cookie</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">laravel 源码解析之session和cookie</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>duc</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/5/12</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>源码解析</span><span class="tag-item" data-v-1ff7123e>session和cookie</span></i></div></div> <div class="theme-reco-content content__default"><blockquote><p>session和cookie概念部分转自 https://harttle.land/2015/08/10/cookie-session.html</p></blockquote> <p>http 协议是无状态的，也就是说客户端和服务端在打交道时，HTTP服务器并不知道这个用户是谁、是否登录过等。那么为什么现在的服务器能知道我们是否已经登录呢？这就是session和cookie的产生原因。</p> <h2 id="cookie-的实现机制"><a href="#cookie-的实现机制" class="header-anchor">#</a> Cookie 的实现机制</h2> <p><a href="https://harttle.land/assets/img/blog/cookie.png" target="_blank" rel="noopener noreferrer">Cookie<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>是由客户端保存的小型文本文件，其内容为一系列的键值对。 <strong>Cookie是由HTTP服务器设置的，保存在浏览器中</strong>， 在用户访问其他页面时，会在HTTP请求中附上该服务器之前设置的Cookie。 Cookie的实现标准定义在<a href="https://www.ietf.org/rfc/rfc2109.txt" target="_blank" rel="noopener noreferrer">RFC2109: HTTP State Management Mechanism<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>中。 那么Cookie是怎样工作的呢？下面给出整个Cookie的传递流程：</p> <ol><li><p>浏览器向某个URL发起HTTP请求（可以是任何请求，比如GET一个页面、POST一个登录表单等）</p></li> <li><p>对应的服务器收到该HTTP请求，并计算应当返回给浏览器的HTTP响应。</p> <blockquote><p>HTTP响应包括请求头和请求体两部分，可以参见：<a href="https://harttle.land/2014/10/01/http.html" target="_blank" rel="noopener noreferrer">读 HTTP 协议<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p></blockquote></li> <li><p>在响应头加入<code>Set-Cookie</code>字段，它的值是要设置的Cookie。</p> <p>在<a href="https://www.ietf.org/rfc/rfc2109.txt" target="_blank" rel="noopener noreferrer">RFC2109 6.3 Implementation Limits<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>中提到： UserAgent（浏览器就是一种用户代理）至少应支持300项Cookie， 每项至少应支持到4096字节，每个域名至少支持20项Cookie。</p></li> <li><p>浏览器收到来自服务器的HTTP响应。</p></li> <li><p>浏览器在响应头中发现<code>Set-Cookie</code>字段，就会将该字段的值保存在内存或者硬盘中。</p> <p><code>Set-Cookie</code>字段的值可以是很多项Cookie，每一项都可以指定过期时间<code>Expires</code>。 默认的过期时间是用户关闭浏览器时。</p></li> <li><p>浏览器下次给该服务器发送HTTP请求时， 会将服务器设置的Cookie附加在HTTP请求的头字段<code>Cookie</code>中。</p> <p>浏览器可以存储多个域名下的Cookie，但只发送当前请求的域名曾经指定的Cookie， 这个域名也可以在<code>Set-Cookie</code>字段中指定）。</p></li> <li><p>服务器收到这个HTTP请求，发现请求头中有<code>Cookie</code>字段， 便知道之前就和这个用户打过交道了。</p></li> <li><p>过期的Cookie会被浏览器删除。</p></li></ol> <p>总之，服务器通过<code>Set-Cookie</code>响应头字段来指示浏览器保存Cookie， 浏览器通过<code>Cookie</code>请求头字段来告诉服务器之前的状态。 Cookie中包含若干个键值对，每个键值对可以设置过期时间。</p> <h2 id="cookie-的安全隐患"><a href="#cookie-的安全隐患" class="header-anchor">#</a> Cookie 的安全隐患</h2> <p>cookie是存在安全隐患的，因为cookie可以被篡改。</p> <p>Cookie提供了一种手段使得HTTP请求可以附加当前状态， 现今的网站也是靠Cookie来标识用户的登录状态的：</p> <ol><li>用户提交用户名和密码的表单，这通常是一个POST HTTP请求。</li> <li>服务器验证用户名与密码，如果合法则返回200（OK）并设置<code>Set-Cookie</code>为<code>authed=true</code>。</li> <li>浏览器存储该Cookie。</li> <li>浏览器发送请求时，设置<code>Cookie</code>字段为<code>authed=true</code>。</li> <li>服务器收到第二次请求，从<code>Cookie</code>字段得知该用户已经登录。 按照已登录用户的权限来处理此次请求。</li></ol> <p>由上面的操作可以看出，cookie不安全。这就引入了session。</p> <h2 id="session-的实现机制"><a href="#session-的实现机制" class="header-anchor">#</a> Session 的实现机制</h2> <p>Session 是存储在服务器端的，避免了在客户端Cookie中存储敏感数据。 Session 可以存储在HTTP服务器的内存中，也可以存在内存数据库（如redis）中， 对于重量级的应用甚至可以存储在数据库中。</p> <p>我们以存储在redis中的Session为例，还是考察如何验证用户登录状态的问题。</p> <ol><li><p>用户提交包含用户名和密码的表单，发送HTTP请求。</p></li> <li><p>服务器验证用户发来的用户名密码。</p></li> <li><p>如果正确则把当前用户名（通常是用户对象）存储到redis中，并生成它在redis中的ID。</p> <p>这个ID称为Session ID，通过Session ID可以从Redis中取出对应的用户对象， 敏感数据（比如<code>authed=true</code>）都存储在这个用户对象中。</p></li> <li><p>设置Cookie为<code>sessionId=xxxxxx|checksum</code>并发送HTTP响应， 仍然为每一项Cookie都设置签名。</p></li> <li><p>用户收到HTTP响应后，便看不到任何敏感数据了。在此后的请求中发送该Cookie给服务器。</p></li> <li><p>服务器收到此后的HTTP请求后，发现Cookie中有SessionID，进行放篡改验证。</p></li> <li><p>如果通过了验证，根据该ID从Redis中取出对应的用户对象， 查看该对象的状态并继续执行业务逻辑。</p></li></ol> <p>Web应用框架都会实现上述过程，在Web应用中可以直接获得当前用户。 相当于<strong>在HTTP协议之上，通过Cookie实现了持久的会话。这个会话便称为Session。</strong></p> <h2 id="区别"><a href="#区别" class="header-anchor">#</a> 区别</h2> <ol><li><p>Cookie 在客户端（浏览器），Session 在服务器端。</p></li> <li><p>Cookie的安全性一般，他人可通过分析存放在本地的Cookie并进行Cookie欺骗。在安全性第一的前提下，选择Session更优。重要交互信息比如权限等就要放在Session中，一般的信息记录放Cookie就好了。</p></li> <li><p>单个Cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个Cookie。</p></li> <li><p>Session 可以放在 文件、数据库或内存中，比如在使用Node时将Session保存在redis中。由于一定时间内它是保存在服务器上的，当访问增多时，会较大地占用服务器的性能。考虑到减轻服务器性能方面，应当适时使用Cookie。</p></li> <li><p>Session 的运行依赖Session ID，而 Session ID 是存在 Cookie 中的，也就是说，如果浏览器禁用了 Cookie，Session 也会失效（但是可以通过其它方式实现，比如在 url 中传递 Session ID）。</p></li> <li><p>用户验证这种场合一般会用 Session。因此，维持一个会话的核心就是客户端的唯一标识，即Session ID。</p></li></ol> <h2 id="laravel-session机制"><a href="#laravel-session机制" class="header-anchor">#</a> Laravel session机制</h2> <blockquote><p>正是由于cookie的不安全，所以 laravel 采用的是 session 存储。也就是返回一个session_id给客户端。</p> <p>laravel 没有使用 cookie 去保存用户的敏感信息。</p></blockquote> <h3 id="首先我们先登录一个用户"><a href="#首先我们先登录一个用户" class="header-anchor">#</a> 首先我们先登录一个用户</h3> <p><img src="/assets/img/2019_01_19_yQAAf23yXw.ed295e55.png" alt="2019_01_19_yQAAf23yXw.png">
+登录之后可以发现，cookie中多了两条信息，然后再刷新页面可以发现我们一直处于登录状态。</p> <p>接下来我们来分析系统是如何识别我们是谁的。</p> <p>先来看请求头，可以发现刷新之后，我们的请求会自动的把cookie发送给服务器。</p> <div class="language-http line-numbers-mode"><pre class="language-http"><code><span class="token header-name keyword">Accept:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+<span class="token header-name keyword">Accept-Encoding:</span> gzip, deflate, br
+<span class="token header-name keyword">Accept-Language:</span> zh-CN,zh;q=0.9,en;q=0.8
+<span class="token header-name keyword">Cache-Control:</span> max-age=0
+<span class="token header-name keyword">Connection:</span> keep-alive
+<span class="token header-name keyword">Cookie:</span> XSRF-TOKEN=eyJpdiI6IjIrcUNLdDIyazdLbWNsb1h2a0xpUWc9PSIsInZhbHVlIjoiRG1WdTc4bjlISmx4b21LZllVRlFZc0JMcWwrXC9jUzR5Ujd5TGVsSktlYmZ5TE5rSkdvZUNBTU1jOUdocE94UDUiLCJtYWMiOiJkN2RjMDc2ZjEyOTQwNGI4NDk1YjNmOTkxZDRjY2UwYTNiNGZlZTVhYjdmYTRiYzA1NzFhYzJiNDRlMWQ4ZGU0In0%3D; laravel_session=eyJpdiI6IjFLK1Q3cHZzUWR0SDVFOXFXRlNPcXc9PSIsInZhbHVlIjoiWUJob3VoaGxDa3UrWlJ6OW9hVytONXdScVZrRUFFWWlzNkEwS25QXC9RdmFaMWtNMVFWd2xJREZRTnlFb1wvUUM5IiwibWFjIjoiYTMyYzVlMzNkM2NkYzFjYTIxOThhMzlmZGI5ZGU2YzJmNTYxZDNjMTBiYjEzMmQ5MWJhMTQyMTE2M2JmMGExMCJ9
+<span class="token header-name keyword">Host:</span> localhost:9999
+<span class="token header-name keyword">Referer:</span> http://localhost:9999/login
+<span class="token header-name keyword">Upgrade-Insecure-Requests:</span> 1
+<span class="token header-name keyword">User-Agent:</span> Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>服务器接收请求并且处理，由之前的Pipeline可知，在执行控制器里面的行为之前，我们要走中间件，而 /login 路由走的是web 中间件，所以我们先来看web中间件，除了先要进过全局中间件以外，还要进过web中间件，下面是默认的web中间件</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token string single-quoted-string">'web'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+    <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>EncryptCookies</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Illuminate<span class="token punctuation">\</span>Cookie<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>AddQueuedCookiesToResponse</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Illuminate<span class="token punctuation">\</span>Session<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>StartSession</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    <span class="token comment">// \Illuminate\Session\Middleware\AuthenticateSession::class,</span>
+    <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Illuminate<span class="token punctuation">\</span>View<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>ShareErrorsFromSession</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>VerifyCsrfToken</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Illuminate<span class="token punctuation">\</span>Routing<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>SubstituteBindings</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>首先是 EncryptCookies 中间件，它对response的cookie做了加密，使用后置中间件的写法，在请求结束后，对服务器响应头进行操作</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token class-name type-declaration">Closure</span> <span class="token variable">$next</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment"># 这里注意了，比较难理解</span>
+    <span class="token comment"># $this-&gt;decrypt($request) 这一步是前置中间件的操作，它把你的请求中的cookie解码了，本来你的cookie是加密的，走到这里就被解密了</span>
+    <span class="token comment"># $next($this-&gt;decrypt($request)) </span>
+    <span class="token comment"># $this-&gt;encrypt(...) 这里是后置中间件键，拆开来会比较好理解</span>
+    <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token variable">$next</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">decrypt</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>接着是    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,也是采用后置中间件的写法，添加在处理逻辑时需要返回给客户端的cookie</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token class-name type-declaration">Closure</span> <span class="token variable">$next</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$response</span> <span class="token operator">=</span> <span class="token variable">$next</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">cookies</span><span class="token operator">-&gt;</span><span class="token function">getQueuedCookies</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token variable">$cookie</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$response</span><span class="token operator">-&gt;</span><span class="token property">headers</span><span class="token operator">-&gt;</span><span class="token function">setCookie</span><span class="token punctuation">(</span><span class="token variable">$cookie</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token variable">$response</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>接着才是前置中间件    \Illuminate\Session\Middleware\StartSession::class,</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token class-name type-declaration">Closure</span> <span class="token variable">$next</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">sessionHandled</span> <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span>
+
+	<span class="token comment"># 开启session</span>
+    <span class="token comment"># 首先去拿config中的session的配置，显然能拿到</span>
+    <span class="token comment"># 然后去startSession</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">sessionConfigured</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token comment"># 把 返回的session 也就是 （Store 实例）赋值给 $request 的 session 属性</span>
+        <span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token function">setLaravelSession</span><span class="token punctuation">(</span>
+            <span class="token variable">$session</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">startSession</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">collectGarbage</span><span class="token punctuation">(</span><span class="token variable">$session</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token variable">$response</span> <span class="token operator">=</span> <span class="token variable">$next</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment"># 后置写法</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">sessionConfigured</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">storeCurrentUrl</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token variable">$session</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">addCookieToResponse</span><span class="token punctuation">(</span><span class="token variable">$response</span><span class="token punctuation">,</span> <span class="token variable">$session</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token variable">$response</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token keyword">protected</span> <span class="token keyword">function</span> <span class="token function">startSession</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">tap</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$session</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment"># 这一步它把request实例给到对应的handler也就是刚刚的CacheBasedSessionHandler 里面，不过对于redis来说这一步是不需要的，只有CookieSessionHandler 实例才需要，(未深究)</span>
+        <span class="token variable">$session</span><span class="token operator">-&gt;</span><span class="token function">setRequestOnHandler</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment"># 加载session</span>
+        <span class="token variable">$session</span><span class="token operator">-&gt;</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">getSession</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment"># $this-&gt;manager-&gt;driver() 去获取配置的sessionManager，我这里用了redis，它最后返回Store实例，这个实例设置了客户端记录session_id的cookie的键名(laravel_session)和session的储存处理器(redis)</span>
+    <span class="token comment"># </span>
+    <span class="token keyword">return</span> <span class="token function">tap</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">manager</span><span class="token operator">-&gt;</span><span class="token function">driver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$session</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment"># 这里 它去获取客户端中储存的session_id的cookie值</span>
+        <span class="token comment"># 这里看到它用了$session-&gt;getName()，刚刚上面所说的laravel_session就在这里获取到了</span>
+        <span class="token variable">$session</span><span class="token operator">-&gt;</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">cookies</span><span class="token operator">-&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token variable">$session</span><span class="token operator">-&gt;</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment"># 所以这一步的操作是把客户端请求头的session_id添加到了Store中的id里面去，并且用tap方法返回了该Store</span>
+
+
+<span class="token comment"># 这里是具体的session CacheHandler 的创建，缓存前缀一些基础的 配置在这生成</span>
+<span class="token keyword">protected</span> <span class="token keyword">function</span> <span class="token function">createCacheHandler</span><span class="token punctuation">(</span><span class="token variable">$driver</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$store</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">app</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'config'</span><span class="token punctuation">]</span><span class="token operator">-&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'session.store'</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">:</span> <span class="token variable">$driver</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CacheBasedSessionHandler</span><span class="token punctuation">(</span>
+        <span class="token keyword">clone</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">app</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cache'</span><span class="token punctuation">]</span><span class="token operator">-&gt;</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token variable">$store</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">app</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'config'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'session.lifetime'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">loadSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'_token'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">regenerateToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># 表示session启动成功</span>
+    <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">started</span> <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">protected</span> <span class="token keyword">function</span> <span class="token function">loadSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">attributes</span> <span class="token operator">=</span> <span class="token function">array_merge</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">attributes</span><span class="token punctuation">,</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">readFromHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">protected</span> <span class="token keyword">function</span> <span class="token function">readFromHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment"># 这里看到它调用了 CacheBasedSessionHandler 的 read 方法</span>
+    <span class="token comment"># read 调用了 RedisStore 中的get方法为对应的 id 加上了前缀</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">handler</span><span class="token operator">-&gt;</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment"># redis 中的数据是序列化过的，所以这里要反序列化</span>
+        <span class="token comment"># redis 存了</span>
+        <span class="token comment"># array:4 [▼</span>
+          <span class="token string double-quoted-string">&quot;_token&quot;</span> <span class="token operator">=&gt;</span> <span class="token string double-quoted-string">&quot;rcEB96T99YH5ITqrLK6MQcWYYc2GsCn3eQUrVqPA&quot;</span>
+          <span class="token string double-quoted-string">&quot;login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d&quot;</span> <span class="token operator">=&gt;</span> <span class="token number">2</span>
+          <span class="token string double-quoted-string">&quot;_flash&quot;</span> <span class="token operator">=&gt;</span> <span class="token keyword type-declaration">array</span><span class="token punctuation">:</span><span class="token number">2</span> <span class="token punctuation">[</span>▼
+            <span class="token string double-quoted-string">&quot;old&quot;</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token string double-quoted-string">&quot;new&quot;</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+          <span class="token punctuation">]</span>
+          <span class="token string double-quoted-string">&quot;_previous&quot;</span> <span class="token operator">=&gt;</span> <span class="token keyword type-declaration">array</span><span class="token punctuation">:</span><span class="token number">1</span> <span class="token punctuation">[</span>▼
+            <span class="token string double-quoted-string">&quot;url&quot;</span> <span class="token operator">=&gt;</span> <span class="token string double-quoted-string">&quot;http://localhost:9999/home&quot;</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">]</span>
+              
+		<span class="token comment"># 上面这些就是session的内容，其中login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d对应的2就是用户的id</span>
+        <span class="token variable">$data</span> <span class="token operator">=</span> @<span class="token function">unserialize</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">prepareForUnserialize</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$data</span> <span class="token operator">!==</span> <span class="token constant boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span> <span class="token function">is_null</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">is_array</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token variable">$data</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><p>此后，你拿到的request实例中session属性就有了用户信息，再之后 auth 中间件判断是否登陆其实拿的就是 session 中的信息，而 session 在上面就实例化过了，并且是单例！</p> <h3 id="remember-me"><a href="#remember-me" class="header-anchor">#</a> remember_me</h3> <p>如果用户的的login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d过期了，但是存在 remember_me 的token，那么内部会去解析该token，id|remember_token|password token的组成三部分，分别用|隔开，系统根据id查用户，然后校验remember_token</p> <h3 id="logoutotherdevices-功能"><a href="#logoutotherdevices-功能" class="header-anchor">#</a> logoutOtherDevices 功能</h3> <p>登出其他设备</p> <ol><li>重置了密码，这一步感觉没必要，因为并没有校验密码，可能是出于安全性</li> <li>重新生成session_id</li></ol></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021/5/27上午9:14:10</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#cookie-的实现机制" class="sidebar-link reco-side-cookie-的实现机制" data-v-70334359>Cookie 的实现机制</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#cookie-的安全隐患" class="sidebar-link reco-side-cookie-的安全隐患" data-v-70334359>Cookie 的安全隐患</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#session-的实现机制" class="sidebar-link reco-side-session-的实现机制" data-v-70334359>Session 的实现机制</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#区别" class="sidebar-link reco-side-区别" data-v-70334359>区别</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#laravel-session机制" class="sidebar-link reco-side-laravel-session机制" data-v-70334359>Laravel session机制</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#首先我们先登录一个用户" class="sidebar-link reco-side-首先我们先登录一个用户" data-v-70334359>首先我们先登录一个用户</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#remember-me" class="sidebar-link reco-side-remember-me" data-v-70334359>remember_me</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/laravel_source_parsing_session_and_cookie.html#logoutotherdevices-功能" class="sidebar-link reco-side-logoutotherdevices-功能" data-v-70334359>logoutOtherDevices 功能</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.ba88b123.js" defer></script><script src="/assets/js/5.2bd63de2.js" defer></script><script src="/assets/js/1.e5a4237d.js" defer></script><script src="/assets/js/37.83794953.js" defer></script>
+  </body>
+</html>

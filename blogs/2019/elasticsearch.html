@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>elasticsearch | DUC&#39;S Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Vue-powered Static Site Generator">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.ba88b123.js" as="script"><link rel="preload" href="/assets/js/5.2bd63de2.js" as="script"><link rel="preload" href="/assets/js/1.e5a4237d.js" as="script"><link rel="preload" href="/assets/js/3.1cee50f2.js" as="script"><link rel="prefetch" href="/assets/js/10.d8d2a28c.js"><link rel="prefetch" href="/assets/js/100.5bd3cdff.js"><link rel="prefetch" href="/assets/js/101.25b2bd69.js"><link rel="prefetch" href="/assets/js/102.26ed66c6.js"><link rel="prefetch" href="/assets/js/103.8732c317.js"><link rel="prefetch" href="/assets/js/104.f6a32ad7.js"><link rel="prefetch" href="/assets/js/105.cc5e86ad.js"><link rel="prefetch" href="/assets/js/106.e235bd02.js"><link rel="prefetch" href="/assets/js/107.be686984.js"><link rel="prefetch" href="/assets/js/108.a6425db4.js"><link rel="prefetch" href="/assets/js/109.c9b0b253.js"><link rel="prefetch" href="/assets/js/11.24fb7a96.js"><link rel="prefetch" href="/assets/js/110.6b56b069.js"><link rel="prefetch" href="/assets/js/111.35d11e29.js"><link rel="prefetch" href="/assets/js/112.9495ccf3.js"><link rel="prefetch" href="/assets/js/113.6edc17d9.js"><link rel="prefetch" href="/assets/js/114.bf2ab61c.js"><link rel="prefetch" href="/assets/js/115.aae62df1.js"><link rel="prefetch" href="/assets/js/116.a2820c0a.js"><link rel="prefetch" href="/assets/js/117.b7a11c19.js"><link rel="prefetch" href="/assets/js/118.843a7416.js"><link rel="prefetch" href="/assets/js/119.7a5c2d7e.js"><link rel="prefetch" href="/assets/js/12.aa2cd533.js"><link rel="prefetch" href="/assets/js/120.d264ed0c.js"><link rel="prefetch" href="/assets/js/121.a3dc713c.js"><link rel="prefetch" href="/assets/js/122.d8986c7e.js"><link rel="prefetch" href="/assets/js/13.22ed5907.js"><link rel="prefetch" href="/assets/js/14.c5b3b3dd.js"><link rel="prefetch" href="/assets/js/15.d0f6e033.js"><link rel="prefetch" href="/assets/js/16.8fd740c8.js"><link rel="prefetch" href="/assets/js/17.ec2fa3a6.js"><link rel="prefetch" href="/assets/js/18.d5fac85e.js"><link rel="prefetch" href="/assets/js/19.c5911735.js"><link rel="prefetch" href="/assets/js/20.03059cfc.js"><link rel="prefetch" href="/assets/js/21.55e42ef2.js"><link rel="prefetch" href="/assets/js/22.f62e39c8.js"><link rel="prefetch" href="/assets/js/23.fbcfd5f6.js"><link rel="prefetch" href="/assets/js/24.e9f442b3.js"><link rel="prefetch" href="/assets/js/25.686cab41.js"><link rel="prefetch" href="/assets/js/26.6970e886.js"><link rel="prefetch" href="/assets/js/27.f734bf64.js"><link rel="prefetch" href="/assets/js/28.f92a44ce.js"><link rel="prefetch" href="/assets/js/29.861135f7.js"><link rel="prefetch" href="/assets/js/30.72607cab.js"><link rel="prefetch" href="/assets/js/31.1aadcdb6.js"><link rel="prefetch" href="/assets/js/32.5eff8fe9.js"><link rel="prefetch" href="/assets/js/33.608ebf0b.js"><link rel="prefetch" href="/assets/js/34.554b9575.js"><link rel="prefetch" href="/assets/js/35.88477f57.js"><link rel="prefetch" href="/assets/js/36.2c5d59b0.js"><link rel="prefetch" href="/assets/js/37.83794953.js"><link rel="prefetch" href="/assets/js/38.58ce3a69.js"><link rel="prefetch" href="/assets/js/39.4a067206.js"><link rel="prefetch" href="/assets/js/4.c93ea189.js"><link rel="prefetch" href="/assets/js/40.7bfcd3c3.js"><link rel="prefetch" href="/assets/js/41.179aa8b4.js"><link rel="prefetch" href="/assets/js/42.75a5b251.js"><link rel="prefetch" href="/assets/js/43.16e44f17.js"><link rel="prefetch" href="/assets/js/44.d8be4b11.js"><link rel="prefetch" href="/assets/js/45.5519f4e8.js"><link rel="prefetch" href="/assets/js/46.e29b1183.js"><link rel="prefetch" href="/assets/js/47.e67f4e23.js"><link rel="prefetch" href="/assets/js/48.03051f9b.js"><link rel="prefetch" href="/assets/js/49.ef301a21.js"><link rel="prefetch" href="/assets/js/50.f2d1b294.js"><link rel="prefetch" href="/assets/js/51.472ec714.js"><link rel="prefetch" href="/assets/js/52.7bb76953.js"><link rel="prefetch" href="/assets/js/53.985ed103.js"><link rel="prefetch" href="/assets/js/54.21bc6881.js"><link rel="prefetch" href="/assets/js/55.5a38347c.js"><link rel="prefetch" href="/assets/js/56.627fb483.js"><link rel="prefetch" href="/assets/js/57.e1dedf22.js"><link rel="prefetch" href="/assets/js/58.a77ffd50.js"><link rel="prefetch" href="/assets/js/59.ea75b7f0.js"><link rel="prefetch" href="/assets/js/6.0b07050c.js"><link rel="prefetch" href="/assets/js/60.41e92b11.js"><link rel="prefetch" href="/assets/js/61.e6926c05.js"><link rel="prefetch" href="/assets/js/62.271b57ae.js"><link rel="prefetch" href="/assets/js/63.72e763b1.js"><link rel="prefetch" href="/assets/js/64.9b6ddfde.js"><link rel="prefetch" href="/assets/js/65.991a3739.js"><link rel="prefetch" href="/assets/js/66.19cea808.js"><link rel="prefetch" href="/assets/js/67.02afc173.js"><link rel="prefetch" href="/assets/js/68.97a401f9.js"><link rel="prefetch" href="/assets/js/69.b64d8216.js"><link rel="prefetch" href="/assets/js/7.cb2b2c8b.js"><link rel="prefetch" href="/assets/js/70.4326ce81.js"><link rel="prefetch" href="/assets/js/71.18ca7cbb.js"><link rel="prefetch" href="/assets/js/72.292c2c55.js"><link rel="prefetch" href="/assets/js/73.b184d0e8.js"><link rel="prefetch" href="/assets/js/74.9d135ab2.js"><link rel="prefetch" href="/assets/js/75.f2a7c54b.js"><link rel="prefetch" href="/assets/js/76.944d45da.js"><link rel="prefetch" href="/assets/js/77.4686b4d3.js"><link rel="prefetch" href="/assets/js/78.33ac81aa.js"><link rel="prefetch" href="/assets/js/79.dea3d9c8.js"><link rel="prefetch" href="/assets/js/8.ab46e0f5.js"><link rel="prefetch" href="/assets/js/80.46aa7414.js"><link rel="prefetch" href="/assets/js/81.347bdd7c.js"><link rel="prefetch" href="/assets/js/82.993fcb39.js"><link rel="prefetch" href="/assets/js/83.bd93928e.js"><link rel="prefetch" href="/assets/js/84.b9d47f5c.js"><link rel="prefetch" href="/assets/js/85.a03f770a.js"><link rel="prefetch" href="/assets/js/86.f056179e.js"><link rel="prefetch" href="/assets/js/87.463036e8.js"><link rel="prefetch" href="/assets/js/88.418f3543.js"><link rel="prefetch" href="/assets/js/89.d26a7b2e.js"><link rel="prefetch" href="/assets/js/9.b6485ce4.js"><link rel="prefetch" href="/assets/js/90.9e762339.js"><link rel="prefetch" href="/assets/js/91.20ef3a87.js"><link rel="prefetch" href="/assets/js/92.cc469314.js"><link rel="prefetch" href="/assets/js/93.2e1705b4.js"><link rel="prefetch" href="/assets/js/94.fba85e0d.js"><link rel="prefetch" href="/assets/js/95.1b0c3fda.js"><link rel="prefetch" href="/assets/js/96.6b9d810d.js"><link rel="prefetch" href="/assets/js/97.dc9fd59e.js"><link rel="prefetch" href="/assets/js/98.d6803ea6.js"><link rel="prefetch" href="/assets/js/99.e03b6036.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>duc</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>duc's blog</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="DUC'S Blog" class="logo"> <span class="site-name">DUC'S Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    duc
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>111</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>115</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>elasticsearch</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">elasticsearch</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>duc</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/5/12</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>elasticsearch</span></i></div></div> <div class="theme-reco-content content__default"><blockquote><p>从2018年开始接触这个搜索引擎，并把es用在了我博客的的搜索上，只是浅显了学习和使用了，今天再次来系统的学习下</p></blockquote> <p><img src="/assets/img/2019_10_02_zreRQmhNeP.f1d12e80.png" alt="2019_10_02_zreRQmhNeP.png"></p> <h2 id="logstash特性"><a href="#logstash特性" class="header-anchor">#</a> Logstash特性</h2> <ul><li>实时解析和转换数据
+<ul><li>从IP地址破译出地理坐标</li> <li>将PII数据匿名化，完全排除敏感字段</li></ul></li> <li>可扩展
+<ul><li>200 多个插件(日志/数据库/Arcsigh/Netflow)</li></ul></li> <li>可靠性安全性
+<ul><li>Logstash会通过持久化队列来保证至少将运行中的事件送达一-次</li> <li>数据传输加密</li></ul></li> <li>监控</li></ul> <p><img src="/assets/img/2019_10_02_FAU48gibgW.563ef64b.png" alt="2019_10_02_FAU48gibgW.png"></p> <p><img src="/assets/img/2019_10_02_889tM7S5Vd.0151f832.png" alt="2019_10_02_889tM7S5Vd.png"></p> <h2 id="elasticsearch的文件目录结构"><a href="#elasticsearch的文件目录结构" class="header-anchor">#</a> Elasticsearch的文件目录结构</h2> <table><thead><tr><th>目录</th> <th>配置文件</th> <th>描述</th></tr></thead> <tbody><tr><td>bin</td> <td></td> <td>脚本文件，包括启动elasticsearch,安装插件。运行统计数据等</td></tr> <tr><td>config</td> <td>elasticsearch.yml</td> <td>集群配置文件，user, role based相关配置</td></tr> <tr><td>JDK</td> <td></td> <td>Java运行坏境</td></tr> <tr><td>data</td> <td>path.data</td> <td>数据文件</td></tr> <tr><td>lib</td> <td></td> <td>Java类库</td></tr> <tr><td>logs</td> <td>path.log</td> <td>日志文件</td></tr> <tr><td>modules</td> <td></td> <td>包含所有ES模块</td></tr> <tr><td>plugins</td> <td></td> <td>包含所有已安装插件</td></tr></tbody></table> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <ol><li><p>tar 方式</p> <ul><li><p>下载解压</p></li> <li><p>执行 bin/elasticsearch</p></li> <li><p>插件安装 bin/elasticsearch-plugin [install|list]</p></li> <li><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 需要重启es</span>
+bin/elasticsearch-plugin <span class="token function">install</span> analysis-icu
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li></ul></li></ol> <h2 id="如何在开发机上运行多个elasticsearch实例"><a href="#如何在开发机上运行多个elasticsearch实例" class="header-anchor">#</a> 如何在开发机上运行多个Elasticsearch实例</h2> <ul><li>bin/elasticsearch -E node.name=node1 -E cluster name=geektime -E path.data=node1. data -d</li> <li>bin/elasticsearch -E node.name=node2 -E cluster name=geektime -E path.data=node2. data -d</li> <li>bin/elasticsearch -E node.name=node3 -E cluster name=geektime -E path.data=node3_ data -d</li> <li>删除进程 ps| grep elasticsearch</li> <li>kill pid</li></ul> <p>分布式运行</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>// 节点名称
+/// 集群名字
+// 数据储存地址
+bin/elasticsearch -E node.name<span class="token operator">=</span>node1 -E cluster.name<span class="token operator">=</span>geektime -E path.data<span class="token operator">=</span>node1_data -d
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>查看集群节点</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>localhost:9200/_cat/nodes
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="docker-compose-yaml"><a href="#docker-compose-yaml" class="header-anchor">#</a> docker-compose.yaml</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+<span class="token comment"># 监控工具</span>
+  <span class="token key atrule">cerebro</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> lmenezes/cerebro<span class="token punctuation">:</span>0.8.3
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> cerebro
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9000<span class="token punctuation">:</span><span class="token number">9000</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>Dhttp.port=9200 <span class="token punctuation">-</span>Dhttp.address=es02
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esnet
+  <span class="token key atrule">kibana</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/kibana/kibana<span class="token punctuation">:</span>7.3.2
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ELASTICSEARCH_HOSTS</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//es02<span class="token punctuation">:</span><span class="token number">9200</span>
+      <span class="token key atrule">I18N_LOCALE</span><span class="token punctuation">:</span> zh<span class="token punctuation">-</span>CN
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5601<span class="token punctuation">:</span><span class="token number">5601</span>
+<span class="token comment">#    volumes:</span>
+<span class="token comment">#      - ./kibana.yml:/usr/share/kibana/config/kibana.yml</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esnet
+  <span class="token key atrule">es03</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/elasticsearch/elasticsearch<span class="token punctuation">:</span>7.3.2
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> es03
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> node.name=es03
+      <span class="token punctuation">-</span> discovery.seed_hosts=es02
+      <span class="token punctuation">-</span> cluster.initial_master_nodes=es01<span class="token punctuation">,</span>es02
+      <span class="token punctuation">-</span> cluster.name=docker<span class="token punctuation">-</span>cluster
+      <span class="token punctuation">-</span> bootstrap.memory_lock=true
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span>
+    <span class="token key atrule">ulimits</span><span class="token punctuation">:</span>
+      <span class="token key atrule">memlock</span><span class="token punctuation">:</span>
+        <span class="token key atrule">soft</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+        <span class="token key atrule">hard</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esdata03<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esnet
+  <span class="token key atrule">es01</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/elasticsearch/elasticsearch<span class="token punctuation">:</span>7.3.2
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> es01
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> node.name=es01
+      <span class="token punctuation">-</span> discovery.seed_hosts=es02
+      <span class="token punctuation">-</span> cluster.initial_master_nodes=es01<span class="token punctuation">,</span>es02
+      <span class="token punctuation">-</span> cluster.name=docker<span class="token punctuation">-</span>cluster
+      <span class="token punctuation">-</span> bootstrap.memory_lock=true
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span>
+    <span class="token key atrule">ulimits</span><span class="token punctuation">:</span>
+      <span class="token key atrule">memlock</span><span class="token punctuation">:</span>
+        <span class="token key atrule">soft</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+        <span class="token key atrule">hard</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esdata01<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9200<span class="token punctuation">:</span><span class="token number">9200</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esnet
+  <span class="token key atrule">es02</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/elasticsearch/elasticsearch<span class="token punctuation">:</span>7.3.2
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> es02
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> node.name=es02
+      <span class="token punctuation">-</span> discovery.seed_hosts=es01
+      <span class="token punctuation">-</span> cluster.initial_master_nodes=es01<span class="token punctuation">,</span>es02
+      <span class="token punctuation">-</span> cluster.name=docker<span class="token punctuation">-</span>cluster
+      <span class="token punctuation">-</span> bootstrap.memory_lock=true
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span>
+    <span class="token key atrule">ulimits</span><span class="token punctuation">:</span>
+      <span class="token key atrule">memlock</span><span class="token punctuation">:</span>
+        <span class="token key atrule">soft</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+        <span class="token key atrule">hard</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esdata02<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esnet
+
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">esdata01</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> local
+  <span class="token key atrule">esdata02</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> local
+  <span class="token key atrule">esdata03</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> local
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">esnet</span><span class="token punctuation">:</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br></div></div><h2 id="kibana-安装插件"><a href="#kibana-安装插件" class="header-anchor">#</a> Kibana 安装插件</h2> <p><img src="/assets/img/2019_10_02_1obFMZITjb.ea58843d.png" alt="2019_10_02_1obFMZITjb.png"></p> <p><img src="/assets/img/2019_10_02_SoMW84H4vC.e461c99a.png" alt="2019_10_02_SoMW84H4vC.png"></p> <p>...</p> <h2 id="抽象与类比-和mysql对比"><a href="#抽象与类比-和mysql对比" class="header-anchor">#</a> 抽象与类比(和mysql对比)</h2> <table><thead><tr><th>mysql</th> <th>es</th></tr></thead> <tbody><tr><td>RDBMS</td> <td>Elasticsearch</td></tr> <tr><td>Table</td> <td>Index (Type)</td></tr> <tr><td>Row</td> <td>Doucment</td></tr> <tr><td>Column</td> <td>Field</td></tr> <tr><td>Schema</td> <td>Mapping</td></tr> <tr><td>SQL</td> <td>DSL</td></tr></tbody></table> <h2 id="docker使用logstash导入数据"><a href="#docker使用logstash导入数据" class="header-anchor">#</a> docker使用logstash导入数据</h2> <p>https://honghuhu.github.io/2019/6/29/</p> <h3 id="查看进群健康状况"><a href="#查看进群健康状况" class="header-anchor">#</a> 查看进群健康状况</h3> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token comment">// _cluster/health</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;cluster_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;docker-cluster&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token string">&quot;green&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;timed_out&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;number_of_nodes&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;number_of_data_nodes&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;active_primary_shards&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;active_shards&quot;</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;relocating_shards&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;initializing_shards&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;unassigned_shards&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;delayed_unassigned_shards&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;number_of_pending_tasks&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;number_of_in_flight_fetch&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;task_max_waiting_in_queue_millis&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;active_shards_percent_as_number&quot;</span><span class="token operator">:</span> <span class="token number">100.0</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><img src="/assets/img/2019_10_02_yGbNz0J2Jd.1b2f380e.png" alt="2019_10_02_yGbNz0J2Jd.png"></p> <p><img src="/assets/img/2019_10_02_PziYiJ2Iuf.72e36319.png" alt="2019_10_02_PziYiJ2Iuf.png"> <img src="/assets/img/2019_10_02_I6qwcGSBVb.a202cafe.png" alt="2019_10_02_I6qwcGSBVb.png"></p> <p><img src="/assets/img/2019_10_02_tm4utzAlon.0f312f03.png" alt="2019_10_02_tm4utzAlon.png"></p> <p><img src="/assets/img/2019_10_02_osoZTiltIC.273eb91e.png" alt="2019_10_02_osoZTiltIC.png"></p> <h2 id="elasticsearch的内置分词器"><a href="#elasticsearch的内置分词器" class="header-anchor">#</a> Elasticsearch的内置分词器</h2> <ul><li>Standard Analyzer一默认分词器，按词切分，小写处理, in the，这些停用词没去掉</li> <li>Simple Analyzer一按照非字母切分(符号被过滤)，小写处理</li> <li>Stop Analyzer一小写处理，停用词过滤(the, a, is),相比simple，多去除了修饰性词语</li> <li>Whitespace Analyzer一按照空格切分，不转小写</li> <li>Keyword Analyzer一不分词，直接将输入当作输出</li> <li>Patter Analyzer一正则表达式，默认\W+ (非字符分隔)</li> <li>Language -提供了30多种常见语言的分词器</li> <li>Customer Analyzer自定义分词器</li></ul> <p><img src="/assets/img/2019_10_02_mbubZLc7Je.e3925dfe.png" alt="2019_10_02_mbubZLc7Je.png"></p> <p><img src="/assets/img/2019_10_02_3Y41YI0Z1q.d64101d1.png" alt="2019_10_02_3Y41YI0Z1q.png"></p> <h3 id="安装-ik-分词器"><a href="#安装-ik-分词器" class="header-anchor">#</a> 安装 ik 分词器</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>elasticsearch-plugin  <span class="token function">install</span> https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.3.2/elasticsearch-analysis-ik-7.3.2.zip
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="更多中文分词器"><a href="#更多中文分词器" class="header-anchor">#</a> 更多中文分词器</h2> <ul><li>IK
+<ul><li>支持自定义词库，支持热更新分词字典</li> <li>Github.com/medcl/elasticsearch-analysis-ik</li></ul></li> <li>THULAC
+<ul><li>清华大学自然语言处理和社会人文计算实验室的一套中文分词器</li> <li>Github.com/microbun/elasticsearch-thulac-plugin</li></ul></li></ul> <h3 id="指定查询的索引"><a href="#指定查询的索引" class="header-anchor">#</a> 指定查询的索引</h3> <table><thead><tr><th>语法</th> <th>范围</th></tr></thead> <tbody><tr><td>/_ search</td> <td>集群上所有的索引</td></tr> <tr><td>/index1/_ search</td> <td>index1</td></tr> <tr><td>/index1,index-2/_search</td> <td>index1和index2</td></tr> <tr><td>/index*/_ search</td> <td>以index开头的索引</td></tr></tbody></table> <p><img src="/assets/img/2019_10_02_EykEHqx7hB.2d1e6699.png" alt="2019_10_02_EykEHqx7hB.png"></p> <h2 id="url-search"><a href="#url-search" class="header-anchor">#</a> Url search</h2> <blockquote><p>通过url query 实现搜索</p></blockquote> <p><code>GET /movies/_search?q=2012&amp;df=title&amp;sort=year:desc&amp;from=O&amp;size=10&amp;time=1s</code></p> <ul><li>q 指定查询语句，使用Query String Syntax</li> <li>df默认字段，不指定时,会对所有字段进行查询</li> <li>Sort排序/from和size用于分页.</li> <li>Profile 可以查看查询是如何被执行的</li></ul> <h3 id="query-string-syntax-2"><a href="#query-string-syntax-2" class="header-anchor">#</a> Query String Syntax (2)</h3> <ul><li>布尔操作</li> <li>AND/ OR/ NOT 或者 &amp;&amp; / || / !</li> <li>必须大写</li> <li>title:(matrix NOT reloaded)</li> <li>分组</li> <li><code>+</code> 表示must</li> <li><code>-</code> 表示must_ not</li> <li>title:(+matrix -reloaded)</li></ul> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+# 泛查询，全部字段查询
+GET movies/_search?q=<span class="token number">2012</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# 指定字段查询
+GET movies/_search?q=title<span class="token operator">:</span><span class="token number">2012</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# PhraseQuery 表示beatful &amp;&amp; mind 要同时出现
+GET movies/_search?q=title<span class="token operator">:</span><span class="token string">&quot;Beautiful Mind&quot;</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# PhraseQuery 表示beatful || mind
+GET movies/_search?q=title<span class="token operator">:</span>(Beautiful Mind)
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# 必须包括 beautiful 和 mind
+GET movies/_search?q=title<span class="token operator">:</span>(Beautiful AND Mind)
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# 必须包括 beautiful 但不能包括 mind
+GET movies/_search?q=title<span class="token operator">:</span>(Beautiful NOT Mind)
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# beautiful +mind %2B=&gt;+
+GET movies/_search?q=title<span class="token operator">:</span>(Beautiful %2BMind)
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h3 id="query-string-syntax-3"><a href="#query-string-syntax-3" class="header-anchor">#</a> Query String Syntax (3)</h3> <ul><li>范围查询</li> <li>区间表示:[] 闭区间，{}开区间</li> <li>year:{2019 TO 2018]</li> <li>year:[* TO 2018]</li> <li>算数符号</li> <li>year:&gt;2010</li> <li>year:(&gt;2010 &amp;&amp; &lt;=2018)</li> <li>year:(+&gt;2010 +&lt;=2018)</li></ul> <h3 id="query-string-syntax-4"><a href="#query-string-syntax-4" class="header-anchor">#</a> Query String Syntax (4)</h3> <ul><li>通配符査洵(通配符査洵效率低，占用内存大，不建以使用。特別是放在最前面)
+<ul><li><code>?</code> 代表1个字符，<code>*</code> 代表0或多个字符</li> <li><code>title:mi?d</code></li> <li><code>tltle:be*</code></li></ul></li> <li>正则表达式
+<ul><li>title:[bt]oy</li></ul></li> <li>模糊匹配与近似査洵
+<ul><li><code>title:befutifl~1</code></li> <li><code>title:&quot;lord rings&quot; ~2</code></li></ul></li></ul> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+# 范围查询 区间/数学写法
+GET movies/_search?q=year<span class="token operator">:</span>&gt;<span class="token number">1980</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# 通配符查询
+GET movies/_search?q=title<span class="token operator">:</span>b*
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# 模糊查询&amp;近似度匹配，单词出错的情况
+GET movies/_search?q=title<span class="token operator">:</span>beautifua~<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# 模糊查询&amp;近似度匹配，单词出错的情况
+GET movies/_search?q=title<span class="token operator">:</span><span class="token string">&quot;lord rings&quot;</span>~<span class="token number">2</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="request-body-search"><a href="#request-body-search" class="header-anchor">#</a> Request body search</h2> <blockquote><p>建议使用这个，因为高阶的查询只能在这里用</p></blockquote> <p><img src="/assets/img/2019_10_02_mKGI3Mv8A3.89a0abad.png" alt="2019_10_02_mKGI3Mv8A3.png"></p> <p><img src="/assets/img/2019_10_02_hbK5auivez.b299eb8e.png" alt="2019_10_02_hbK5auivez.png"></p> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+# 对日期排序
+GET kibana_sample_data_ecommerce/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;sort&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;order_date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;desc&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match_all&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# 只拿需要的信息(order_date)
+GET kibana_sample_data_ecommerce/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;_source&quot;</span><span class="token operator">:</span> <span class="token string">&quot;order_date&quot;</span><span class="token punctuation">,</span> 
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match_all&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# 脚本字段
+GET kibana_sample_data_ecommerce/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;script_fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;new_field&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;script&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;painless&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;source&quot;</span><span class="token operator">:</span> <span class="token string">&quot;doc['order_date'].value +'_hello'&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+# or 查询
+GET movies/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Beautiful Mind&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# and 查询
+GET movies/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Beautiful Mind&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AND&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+
+# phrase 查询
+GET movies/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match_phrase&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;one love&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+# phrase 查询
+GET movies/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match_phrase&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;one love&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;slop&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;profile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br></div></div><p><img src="/assets/img/2019_10_02_h9QgRZp9QD.24757139.png" alt="2019_10_02_h9QgRZp9QD.png"></p> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+PUT /users/_doc/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ruan yiming&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;about&quot;</span><span class="token operator">:</span> <span class="token string">&quot;php, golang, vue, js, docker, k8s&quot;</span>
+<span class="token punctuation">}</span>
+
+PUT /users/_doc/<span class="token number">2</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;li yiming&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;about&quot;</span><span class="token operator">:</span> <span class="token string">&quot;handoop&quot;</span>
+<span class="token punctuation">}</span>
+
+POST users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;query_string&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;default_field&quot;</span><span class="token operator">:</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ruan AND yiming&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+POST users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;query_string&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;about&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;(ruan AND yiming) OR (java AND k8s)&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# 不支持and ， 默认是 or
+POST users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;simple_query_string&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ruan yiming&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+# 修改默认操作符
+POST users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;simple_query_string&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ruan yiming&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;default_operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AND&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div><h3 id="什么是mapping"><a href="#什么是mapping" class="header-anchor">#</a> 什么是Mapping</h3> <ul><li>Mapping 类似数据库中的schema的定义，作用如下
+<ul><li>定义索引中的字段的名称</li> <li>定义字段的数据类型， 例如字符串，数字，布.....</li> <li>字段， 倒排索引的相关配置，(Analyzed or Not Analyzed,
+Analyzer)</li></ul></li> <li>Mapping会把JSON文档映射成Lucene所需要的扁平格式</li> <li>一个Mapping属于一个索引的Type
+<ul><li>每个文档都属于-一个Type</li> <li>一个Type有一个Mapping定义</li> <li>7.0 开始，不需要在Mapping定义中指定type信息</li></ul></li></ul> <h2 id="字段的数据类型"><a href="#字段的数据类型" class="header-anchor">#</a> 字段的数据类型</h2> <ul><li>简单类型
+<ul><li>Text / Keyword</li> <li>Date</li> <li>Integer / Floating</li> <li>Boolean</li> <li>IPv4 &amp; IPv6</li></ul></li> <li>复杂类型-对象和嵌套对象
+<ul><li>对象类型/嵌套类型</li></ul></li> <li>特殊类型
+<ul><li>geo_ point &amp; geo_ shape / percolator</li></ul></li></ul> <p><img src="/assets/img/2019_10_02_Y4gbV2nwD3.ff4e8f08.png" alt="2019_10_02_Y4gbV2nwD3.png"></p> <h3 id="类型的自动识别"><a href="#类型的自动识别" class="header-anchor">#</a> 类型的自动识别</h3> <table><thead><tr><th>JSON类型</th> <th>Elasticsearch类型</th></tr></thead> <tbody><tr><td>布尔值</td> <td>boolean</td></tr> <tr><td>字符串</td> <td>1. 匹配日期格式，设置成Date 2. 配置数字设置为float或者long, 该选项默认关闭 3.设置为text，并且增加 keyword 字段</td></tr> <tr><td>float</td> <td>浮点数</td></tr> <tr><td>整数</td> <td>long</td></tr> <tr><td>对象</td> <td>Object</td></tr> <tr><td>数组</td> <td>由第一个非空数值的类型所决定</td></tr> <tr><td>空值</td> <td>忽略</td></tr></tbody></table> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+
+PUT mapping_test/_doc/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;firstName&quot;</span><span class="token operator">:</span><span class="token string">&quot;du&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;lastName&quot;</span><span class="token operator">:</span><span class="token string">&quot;cong&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;loginDate&quot;</span><span class="token operator">:</span><span class="token string">&quot;2019-08-08T10:29:29.103Z&quot;</span>
+<span class="token punctuation">}</span>
+
+DELETE mapping_test
+
+GET mapping_test/_mapping
+
+PUT mapping_test/_doc/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;uid&quot;</span><span class="token operator">:</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;vip&quot;</span><span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;isVip&quot;</span><span class="token operator">:</span><span class="token string">&quot;true&quot;</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="能否更改mapping的字段类型"><a href="#能否更改mapping的字段类型" class="header-anchor">#</a> 能否更改Mapping的字段类型</h3> <ul><li>两种情况</li> <li>新增加字段</li> <li>Dynamic设为true时，-旦有新增字段的文档写入，Mapping也同时被更新</li> <li>Dynamic设为false, Mapping不会被更新，新增字段的数据无法被索引，但是信息会出现在_ source中</li> <li>Dynamip设置成Strict, 文档写入失败</li> <li>对已有字段，一旦已经有数据写入，就不再支持修改字段定义</li> <li>Lucene实现的倒排索引，-旦生成后,就不允许修改</li> <li>如果希望改变字段类型，必须Reindex API， 重建索引</li> <li>原因</li> <li>如果修改了字段的数据类型，会导致已被索引的属于无法被搜索</li> <li>但是如果是增加新的字段，就不会有这样的影响</li></ul> <p><img src="/assets/img/2019_10_02_iZhubLiXgR.44f33ff7.png" alt="2019_10_02_iZhubLiXgR.png"></p> <h2 id="定义mapping"><a href="#定义mapping" class="header-anchor">#</a> 定义mapping</h2> <div class="language-json line-numbers-mode"><pre class="language-json"><code>PUT movies
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;mapping&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">//</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="自定义mapping的一些建议"><a href="#自定义mapping的一些建议" class="header-anchor">#</a> 自定义Mapping的一些建议</h3> <ul><li>可以参考 API手册，纯手写</li> <li>为了 减少输入的工作量，减少出错概率，可以依照以下步骤
+<ul><li>创建一个临时的jindex，写入-些样本数据</li> <li>通过访问Mapping API获得该临时文件的动态Mapping定义</li> <li>修改后用，使用该配置创建你的索引</li> <li>删除临时索引</li></ul></li></ul> <p><img src="/assets/img/2019_10_02_U8hLGQzLqA.2a72efab.png" alt="2019_10_02_U8hLGQzLqA.png"></p> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+
+DELETE users
+
+# 不给 mobile建立索引
+PUT users
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;mappings&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;index&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+GET users/_mapping
+
+PUT users/_doc/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;du&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cong&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;18888780080&quot;</span>
+<span class="token punctuation">}</span>
+
+GET users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;du&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+GET users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;18888&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br></div></div><h3 id="倒排索引建立的四种级别"><a href="#倒排索引建立的四种级别" class="header-anchor">#</a> 倒排索引建立的四种级别</h3> <p><img src="/assets/img/2019_10_02_X9vzJCWURv.406410b3.png" alt="2019_10_02_X9vzJCWURv.png"></p> <h3 id="对-null-值搜索"><a href="#对-null-值搜索" class="header-anchor">#</a> 对 null 值搜索</h3> <p><img src="/assets/img/2019_10_02_o9C76xrdRZ.1e7fb7dc.png" alt="2019_10_02_o9C76xrdRZ.png"></p> <p><img src="/assets/img/2019_10_02_plACTCYYFC.ce25061e.png" alt="2019_10_02_plACTCYYFC.png"></p> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+DELETE users
+
+# copy to 拷贝到fullname字段，不会出现在查询中
+PUT users
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;mappings&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;copy_to&quot;</span><span class="token operator">:</span> <span class="token string">&quot;fullname&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;copy_to&quot;</span><span class="token operator">:</span> <span class="token string">&quot;fullname&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;keyword&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;null_value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;NULL&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+PUT users/_doc/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;du&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cong&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span>
+<span class="token punctuation">}</span>
+
+GET users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;fullname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;du&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><p><img src="/assets/img/2019_10_02_FSNtUeoyFX.618de151.png" alt="2019_10_02_FSNtUeoyFX.png"></p> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+DELETE users
+
+# 不给 mobile建立索引
+PUT users
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;mappings&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;keyword&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;null_value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;NULL&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+GET users/_mapping
+
+PUT users/_doc/<span class="token number">1</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;du&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cong&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span>
+<span class="token punctuation">}</span>
+
+GET users/_search
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;query&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;match&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;mobile&quot;</span><span class="token operator">:</span> <span class="token string">&quot;NULL&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h2 id="多字段类型"><a href="#多字段类型" class="header-anchor">#</a> 多字段类型</h2> <p><img src="/assets/img/2019_10_05_RS2QKAbtFQ.5c22aef8.png" alt="2019_10_05_RS2QKAbtFQ.png"></p> <p><img src="/assets/img/2019_10_05_cPLcndAcrO.06ec1a8a.png" alt="2019_10_05_cPLcndAcrO.png"></p> <ul><li>Exact Values keywork 类型，不需要分词</li> <li>Full Text  需要分词</li></ul> <h2 id="自定义分词器"><a href="#自定义分词器" class="header-anchor">#</a> 自定义分词器</h2> <p><img src="/assets/img/2019_10_05_a0cLfsC5Bx.d73e48d2.png" alt="2019_10_05_a0cLfsC5Bx.png"></p> <p><img src="/assets/img/2019_10_05_Psa5xxyCNF.b9fa0905.png" alt="2019_10_05_Psa5xxyCNF.png"></p> <p><img src="/assets/img/2019_10_05_CohSGtw94I.dc4d72ef.png" alt="2019_10_05_CohSGtw94I.png"></p> <p><img src="/assets/img/2019_10_05_TGythrHfkk.574d4084.png" alt="2019_10_05_TGythrHfkk.png"></p> <p><img src="/assets/img/2019_10_05_gjKQHSlDGu.429e0c9e.png" alt="2019_10_05_gjKQHSlDGu.png"></p> <div class="language-json line-numbers-mode"><pre class="language-json"><code>POST _analyze
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;tokenizer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;keyword&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;char_filter&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;html_strip&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;text&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;b&gt;hi&lt;/b&gt;&quot;</span>
+<span class="token punctuation">}</span>
+
+
+# 输入替换
+POST _analyze
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;tokenizer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;standard&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;char_filter&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+     <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;mapping&quot;</span><span class="token punctuation">,</span>
+     <span class="token property">&quot;mappings&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;- =&gt; _&quot;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;text&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1-2,3-4,5-6&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="自定义"><a href="#自定义" class="header-anchor">#</a> 自定义</h2> <div class="language-json line-numbers-mode"><pre class="language-json"><code>
+# 给索引定义 自定义 解析器
+DELETE my_index
+PUT my_index
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;settings&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;analysis&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;analyzer&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;custom&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;custom&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;char_filter&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;emoticons&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;tokenizer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;punctuation&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;filter&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;lowercase&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;english_stop&quot;</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;tokenizer&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;punctuation&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;pattern&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;[,.!?]&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;char_filter&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;emoticons&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;mapping&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;mappings&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;:) =&gt; happy&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;:( =&gt; sad&quot;</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;filter&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;english_stop&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;stop&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;stopwords&quot;</span><span class="token operator">:</span> <span class="token string">&quot;_english_&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+GET my_index
+
+POST my_index/_analyze
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;analyzer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;custom&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;text&quot;</span><span class="token operator">:</span> <span class="token string">&quot;:) hi in the home! HAHHA&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021/5/27上午9:14:10</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.ba88b123.js" defer></script><script src="/assets/js/5.2bd63de2.js" defer></script><script src="/assets/js/1.e5a4237d.js" defer></script><script src="/assets/js/3.1cee50f2.js" defer></script>
+  </body>
+</html>

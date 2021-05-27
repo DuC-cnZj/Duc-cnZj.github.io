@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>多语言微服务版本管理实践 | DUC&#39;S Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Vue-powered Static Site Generator">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.ba88b123.js" as="script"><link rel="preload" href="/assets/js/5.2bd63de2.js" as="script"><link rel="preload" href="/assets/js/1.e5a4237d.js" as="script"><link rel="preload" href="/assets/js/30.72607cab.js" as="script"><link rel="prefetch" href="/assets/js/10.d8d2a28c.js"><link rel="prefetch" href="/assets/js/100.5bd3cdff.js"><link rel="prefetch" href="/assets/js/101.25b2bd69.js"><link rel="prefetch" href="/assets/js/102.26ed66c6.js"><link rel="prefetch" href="/assets/js/103.8732c317.js"><link rel="prefetch" href="/assets/js/104.f6a32ad7.js"><link rel="prefetch" href="/assets/js/105.cc5e86ad.js"><link rel="prefetch" href="/assets/js/106.e235bd02.js"><link rel="prefetch" href="/assets/js/107.be686984.js"><link rel="prefetch" href="/assets/js/108.a6425db4.js"><link rel="prefetch" href="/assets/js/109.c9b0b253.js"><link rel="prefetch" href="/assets/js/11.24fb7a96.js"><link rel="prefetch" href="/assets/js/110.6b56b069.js"><link rel="prefetch" href="/assets/js/111.35d11e29.js"><link rel="prefetch" href="/assets/js/112.9495ccf3.js"><link rel="prefetch" href="/assets/js/113.6edc17d9.js"><link rel="prefetch" href="/assets/js/114.bf2ab61c.js"><link rel="prefetch" href="/assets/js/115.aae62df1.js"><link rel="prefetch" href="/assets/js/116.a2820c0a.js"><link rel="prefetch" href="/assets/js/117.b7a11c19.js"><link rel="prefetch" href="/assets/js/118.843a7416.js"><link rel="prefetch" href="/assets/js/119.7a5c2d7e.js"><link rel="prefetch" href="/assets/js/12.aa2cd533.js"><link rel="prefetch" href="/assets/js/120.d264ed0c.js"><link rel="prefetch" href="/assets/js/121.a3dc713c.js"><link rel="prefetch" href="/assets/js/122.d8986c7e.js"><link rel="prefetch" href="/assets/js/13.22ed5907.js"><link rel="prefetch" href="/assets/js/14.c5b3b3dd.js"><link rel="prefetch" href="/assets/js/15.d0f6e033.js"><link rel="prefetch" href="/assets/js/16.8fd740c8.js"><link rel="prefetch" href="/assets/js/17.ec2fa3a6.js"><link rel="prefetch" href="/assets/js/18.d5fac85e.js"><link rel="prefetch" href="/assets/js/19.c5911735.js"><link rel="prefetch" href="/assets/js/20.03059cfc.js"><link rel="prefetch" href="/assets/js/21.55e42ef2.js"><link rel="prefetch" href="/assets/js/22.f62e39c8.js"><link rel="prefetch" href="/assets/js/23.fbcfd5f6.js"><link rel="prefetch" href="/assets/js/24.e9f442b3.js"><link rel="prefetch" href="/assets/js/25.686cab41.js"><link rel="prefetch" href="/assets/js/26.6970e886.js"><link rel="prefetch" href="/assets/js/27.f734bf64.js"><link rel="prefetch" href="/assets/js/28.f92a44ce.js"><link rel="prefetch" href="/assets/js/29.861135f7.js"><link rel="prefetch" href="/assets/js/3.1cee50f2.js"><link rel="prefetch" href="/assets/js/31.1aadcdb6.js"><link rel="prefetch" href="/assets/js/32.5eff8fe9.js"><link rel="prefetch" href="/assets/js/33.608ebf0b.js"><link rel="prefetch" href="/assets/js/34.554b9575.js"><link rel="prefetch" href="/assets/js/35.88477f57.js"><link rel="prefetch" href="/assets/js/36.2c5d59b0.js"><link rel="prefetch" href="/assets/js/37.83794953.js"><link rel="prefetch" href="/assets/js/38.58ce3a69.js"><link rel="prefetch" href="/assets/js/39.4a067206.js"><link rel="prefetch" href="/assets/js/4.c93ea189.js"><link rel="prefetch" href="/assets/js/40.7bfcd3c3.js"><link rel="prefetch" href="/assets/js/41.179aa8b4.js"><link rel="prefetch" href="/assets/js/42.75a5b251.js"><link rel="prefetch" href="/assets/js/43.16e44f17.js"><link rel="prefetch" href="/assets/js/44.d8be4b11.js"><link rel="prefetch" href="/assets/js/45.5519f4e8.js"><link rel="prefetch" href="/assets/js/46.e29b1183.js"><link rel="prefetch" href="/assets/js/47.e67f4e23.js"><link rel="prefetch" href="/assets/js/48.03051f9b.js"><link rel="prefetch" href="/assets/js/49.ef301a21.js"><link rel="prefetch" href="/assets/js/50.f2d1b294.js"><link rel="prefetch" href="/assets/js/51.472ec714.js"><link rel="prefetch" href="/assets/js/52.7bb76953.js"><link rel="prefetch" href="/assets/js/53.985ed103.js"><link rel="prefetch" href="/assets/js/54.21bc6881.js"><link rel="prefetch" href="/assets/js/55.5a38347c.js"><link rel="prefetch" href="/assets/js/56.627fb483.js"><link rel="prefetch" href="/assets/js/57.e1dedf22.js"><link rel="prefetch" href="/assets/js/58.a77ffd50.js"><link rel="prefetch" href="/assets/js/59.ea75b7f0.js"><link rel="prefetch" href="/assets/js/6.0b07050c.js"><link rel="prefetch" href="/assets/js/60.41e92b11.js"><link rel="prefetch" href="/assets/js/61.e6926c05.js"><link rel="prefetch" href="/assets/js/62.271b57ae.js"><link rel="prefetch" href="/assets/js/63.72e763b1.js"><link rel="prefetch" href="/assets/js/64.9b6ddfde.js"><link rel="prefetch" href="/assets/js/65.991a3739.js"><link rel="prefetch" href="/assets/js/66.19cea808.js"><link rel="prefetch" href="/assets/js/67.02afc173.js"><link rel="prefetch" href="/assets/js/68.97a401f9.js"><link rel="prefetch" href="/assets/js/69.b64d8216.js"><link rel="prefetch" href="/assets/js/7.cb2b2c8b.js"><link rel="prefetch" href="/assets/js/70.4326ce81.js"><link rel="prefetch" href="/assets/js/71.18ca7cbb.js"><link rel="prefetch" href="/assets/js/72.292c2c55.js"><link rel="prefetch" href="/assets/js/73.b184d0e8.js"><link rel="prefetch" href="/assets/js/74.9d135ab2.js"><link rel="prefetch" href="/assets/js/75.f2a7c54b.js"><link rel="prefetch" href="/assets/js/76.944d45da.js"><link rel="prefetch" href="/assets/js/77.4686b4d3.js"><link rel="prefetch" href="/assets/js/78.33ac81aa.js"><link rel="prefetch" href="/assets/js/79.dea3d9c8.js"><link rel="prefetch" href="/assets/js/8.ab46e0f5.js"><link rel="prefetch" href="/assets/js/80.46aa7414.js"><link rel="prefetch" href="/assets/js/81.347bdd7c.js"><link rel="prefetch" href="/assets/js/82.993fcb39.js"><link rel="prefetch" href="/assets/js/83.bd93928e.js"><link rel="prefetch" href="/assets/js/84.b9d47f5c.js"><link rel="prefetch" href="/assets/js/85.a03f770a.js"><link rel="prefetch" href="/assets/js/86.f056179e.js"><link rel="prefetch" href="/assets/js/87.463036e8.js"><link rel="prefetch" href="/assets/js/88.418f3543.js"><link rel="prefetch" href="/assets/js/89.d26a7b2e.js"><link rel="prefetch" href="/assets/js/9.b6485ce4.js"><link rel="prefetch" href="/assets/js/90.9e762339.js"><link rel="prefetch" href="/assets/js/91.20ef3a87.js"><link rel="prefetch" href="/assets/js/92.cc469314.js"><link rel="prefetch" href="/assets/js/93.2e1705b4.js"><link rel="prefetch" href="/assets/js/94.fba85e0d.js"><link rel="prefetch" href="/assets/js/95.1b0c3fda.js"><link rel="prefetch" href="/assets/js/96.6b9d810d.js"><link rel="prefetch" href="/assets/js/97.dc9fd59e.js"><link rel="prefetch" href="/assets/js/98.d6803ea6.js"><link rel="prefetch" href="/assets/js/99.e03b6036.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>duc</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>duc's blog</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="DUC'S Blog" class="logo"> <span class="site-name">DUC'S Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    duc
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>111</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>115</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>多语言微服务版本管理实践</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">多语言微服务版本管理实践</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>duc</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/5/12</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>微服务</span><span class="tag-item" data-v-1ff7123e>php</span><span class="tag-item" data-v-1ff7123e>golang</span></i></div></div> <div class="theme-reco-content content__default"><p><img src="/assets/img/2020_11_06_OlGYFbXEtO.d7ab514e.png" alt="2020_11_06_OlGYFbXEtO.png"></p> <p>版本化、优雅、简单实现微服务之间的rpc通讯</p> <p>首先划分业务架构</p> <p>淘宝、京东、天猫属于业务层</p> <p>订单、支付属于基础服务
+<img src="/assets/img/2020_11_06_GrT8GQ84ww.4191fe9f.png" alt="2020_11_06_GrT8GQ84ww.png"></p> <h2 id="实践"><a href="#实践" class="header-anchor">#</a> 实践</h2> <blockquote><p>本文研究的是业务层(php)如何优雅的通过rpc(grpc, protobuf)和基础服务(go)通讯</p></blockquote> <p>现在有2个底层服务(商品、订单GOLANG)，一个业务中台(laravel)，</p> <p>需要实现</p> <ol><li>php和golang之间0配置调用，版本管理</li> <li>rpc和rpc之间proto版本化管理</li></ol> <p>goods 服务的proto，声明了一个 带有 <code>getOneByType</code> 的 <code>Iphone</code> svc</p> <div class="language-protobuf line-numbers-mode"><pre class="language-protobuf"><code><span class="token keyword">syntax</span><span class="token operator">=</span><span class="token string">&quot;proto3&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">package</span> goods<span class="token punctuation">;</span>
+
+<span class="token keyword">option</span> go_package<span class="token operator">=</span><span class="token string">&quot;github.com/DuC-cnZj/goods_proto&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">option</span> php_metadata_namespace <span class="token operator">=</span> <span class="token string">&quot;Goods&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+  <span class="token builtin">int32</span> type <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Response</span> <span class="token punctuation">{</span>
+  <span class="token builtin">string</span> code <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token builtin">string</span> msg <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">service</span> <span class="token class-name">Iphone</span> <span class="token punctuation">{</span>
+  <span class="token keyword">rpc</span> <span class="token function">getOneByType</span><span class="token punctuation">(</span><span class="token class-name">Request</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">Response</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>订单服务的proto，声明了一个带有 <code>list</code> <code>create</code> 的订单服务</p> <div class="language-protobuf line-numbers-mode"><pre class="language-protobuf"><code><span class="token keyword">syntax</span><span class="token operator">=</span><span class="token string">&quot;proto3&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">package</span> order<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token string">&quot;google/protobuf/empty.proto&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">option</span> go_package<span class="token operator">=</span><span class="token string">&quot;github.com/DuC-cnZj/order_protos&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">option</span> php_metadata_namespace <span class="token operator">=</span> <span class="token string">&quot;Order&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+  <span class="token builtin">string</span> num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token builtin">string</span> user_name <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Response</span> <span class="token punctuation">{</span>
+  <span class="token builtin">int32</span> code <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token builtin">string</span> data <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">service</span> <span class="token class-name">Order</span> <span class="token punctuation">{</span>
+  <span class="token keyword">rpc</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token class-name">google.protobuf.Empty</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">Response</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">rpc</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Request</span><span class="token punctuation">)</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token class-name">Response</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><strong>生成对应的php版本的pb.go文件</strong>，那么php应该如何接入呢？</p> <p>直接服务pb文件到php项目的目录下？不可行，如果有多个php项目，复用性为0，修改起来麻烦，无法版本化管理。</p> <p>那么该怎么做呢？</p> <p>答案是通过composer，生成 package，并且在 ci/cd 阶段自动化打包提交，这时候就会得到可复用的，版本化的composer包。</p> <p>php client 使用麻烦怎么办？</p> <p>每次使用都需要这样写，太麻烦了</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token variable">$client</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IphoneClient</span><span class="token punctuation">(</span><span class="token string double-quoted-string">&quot;rpc:host&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token variable">$response</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$client</span><span class="token operator">-&gt;</span><span class="token function">getOneByType</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$response</span><span class="token operator">-&gt;</span><span class="token property">code</span> <span class="token operator">==</span> \Grpc\<span class="token constant">CALL_OK</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$asArray</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token operator">-&gt;</span><span class="token function">serializeToJsonString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token variable">$data</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name class-name-fully-qualified"><span class="token punctuation">\</span>Exception</span><span class="token punctuation">(</span><span class="token string double-quoted-string">&quot;Goods rpc client error: &quot;</span> <span class="token operator">.</span> <span class="token variable">$response</span><span class="token operator">-&gt;</span><span class="token property">details</span><span class="token punctuation">,</span> <span class="token variable">$response</span><span class="token operator">-&gt;</span><span class="token property">code</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>能否用一行搞定？类似 <code>IphoneClient::getOneByType(['type' =&gt; 1])</code>，或许你觉得不可能，但是实际上可以。</p> <p>如果你使用laravel框架，肯定会惊叹它的Facades是多么的好用，它的服务自动发现是多么神奇，如果能用到grpc中那么该多好。</p> <p>在这里我推荐一个pkg <code>duc_cnzj/rpc-facades-generator</code>，自动帮你生成grpc facades，实现零修改，自动生成如下代码</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">Goods<span class="token punctuation">\</span>Facades</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Facade</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ *
+ * @method static \Goods\Response|array getOneByType($data = [], bool $asArray = true)
+ *
+ * Class IphoneClient
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">IphoneClient</span> <span class="token keyword">extends</span> <span class="token class-name">Facade</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">getFacadeAccessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Goods<span class="token punctuation">\</span>Services<span class="token punctuation">\</span>IphoneClientService</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>那么你可能会问，rpc调用的地址在哪里配？</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">Goods</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Goods<span class="token punctuation">\</span>IphoneClient</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">ServiceProvider</span> <span class="token keyword">extends</span> <span class="token class-name class-name-fully-qualified"><span class="token punctuation">\</span>Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>ServiceProvider</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">app</span><span class="token operator">-&gt;</span><span class="token function">singleton</span><span class="token punctuation">(</span><span class="token class-name static-context">IphoneClient</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">app</span><span class="token operator">-&gt;</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token class-name static-context">IphoneClient</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+            <span class="token operator">-&gt;</span><span class="token function">needs</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'$hostname'</span><span class="token punctuation">)</span>
+            <span class="token operator">-&gt;</span><span class="token function">give</span><span class="token punctuation">(</span><span class="token function">env</span><span class="token punctuation">(</span><span class="token string double-quoted-string">&quot;GOODS_HOST&quot;</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">app</span><span class="token operator">-&gt;</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token class-name static-context">IphoneClient</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+            <span class="token operator">-&gt;</span><span class="token function">needs</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'$opts'</span><span class="token punctuation">)</span>
+            <span class="token operator">-&gt;</span><span class="token function">give</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+                <span class="token string single-quoted-string">'credentials'</span> <span class="token operator">=&gt;</span> <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Grpc<span class="token punctuation">\</span>ChannelCredentials</span><span class="token operator">::</span><span class="token function">createInsecure</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>没错，你只需要在 <code>.env</code> 中配置 GOODS_HOST 就可以了，其他的不用管！pkg帮你自动生成！</p> <p>搞定了php和go之间的版本化管理，那么我们再来谈谈go和go微服务之间的proto版本管理，和php相同原理，这里我们也使用pkd来管理proto文件通过ci/cd 生成pb文件，并且用git打包上传到一个专门的proto仓库，实现版本化管理。</p> <h3 id="源码"><a href="#源码" class="header-anchor">#</a> 源码</h3> <p><a href="https://github.com/DuC-cnZj/rpc-facades-generator" target="_blank" rel="noopener noreferrer">rpc-facades-generator<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> grpc laravel facades 生成器，只需要 require --dev 即可</p> <p><a href="https://github.com/DuC-cnZj/order_protos" target="_blank" rel="noopener noreferrer">order_protos<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>  order 服务的proto文件仓库</p> <p><a href="https://github.com/DuC-cnZj/micro-order" target="_blank" rel="noopener noreferrer">micro-order<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>  order 服务</p> <p><a href="https://github.com/DuC-cnZj/goods_proto" target="_blank" rel="noopener noreferrer">goods_proto<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>  goods 服务的proto仓库</p> <p><a href="https://github.com/DuC-cnZj/micro-goods" target="_blank" rel="noopener noreferrer">micro-goods<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> goods服务</p> <p>核心实现要点：  通过 ci/cd 生成并且上传对应语言的 pb 文件，并且通过pkg管理起来</p> <h2 id="优点"><a href="#优点" class="header-anchor">#</a> 优点</h2> <ol><li>版本化</li> <li>可复用</li> <li>简单</li></ol> <h2 id="思考"><a href="#思考" class="header-anchor">#</a> 思考？</h2> <p>单体golang微服务仓库对比多仓库</p> <p>单体仓库cicd麻烦，并且团队合作相比多仓库难</p> <p>单体仓库构建流程麻烦不推荐</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021/5/27上午9:14:10</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.ba88b123.js" defer></script><script src="/assets/js/5.2bd63de2.js" defer></script><script src="/assets/js/1.e5a4237d.js" defer></script><script src="/assets/js/30.72607cab.js" defer></script>
+  </body>
+</html>

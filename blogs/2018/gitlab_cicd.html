@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>从零开始搭建 gitlab CICD 服务 | DUC&#39;S Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Vue-powered Static Site Generator">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.ba88b123.js" as="script"><link rel="preload" href="/assets/js/5.2bd63de2.js" as="script"><link rel="preload" href="/assets/js/1.e5a4237d.js" as="script"><link rel="preload" href="/assets/js/21.55e42ef2.js" as="script"><link rel="prefetch" href="/assets/js/10.d8d2a28c.js"><link rel="prefetch" href="/assets/js/100.5bd3cdff.js"><link rel="prefetch" href="/assets/js/101.25b2bd69.js"><link rel="prefetch" href="/assets/js/102.26ed66c6.js"><link rel="prefetch" href="/assets/js/103.8732c317.js"><link rel="prefetch" href="/assets/js/104.f6a32ad7.js"><link rel="prefetch" href="/assets/js/105.cc5e86ad.js"><link rel="prefetch" href="/assets/js/106.e235bd02.js"><link rel="prefetch" href="/assets/js/107.be686984.js"><link rel="prefetch" href="/assets/js/108.a6425db4.js"><link rel="prefetch" href="/assets/js/109.c9b0b253.js"><link rel="prefetch" href="/assets/js/11.24fb7a96.js"><link rel="prefetch" href="/assets/js/110.6b56b069.js"><link rel="prefetch" href="/assets/js/111.35d11e29.js"><link rel="prefetch" href="/assets/js/112.9495ccf3.js"><link rel="prefetch" href="/assets/js/113.6edc17d9.js"><link rel="prefetch" href="/assets/js/114.bf2ab61c.js"><link rel="prefetch" href="/assets/js/115.aae62df1.js"><link rel="prefetch" href="/assets/js/116.a2820c0a.js"><link rel="prefetch" href="/assets/js/117.b7a11c19.js"><link rel="prefetch" href="/assets/js/118.843a7416.js"><link rel="prefetch" href="/assets/js/119.7a5c2d7e.js"><link rel="prefetch" href="/assets/js/12.aa2cd533.js"><link rel="prefetch" href="/assets/js/120.d264ed0c.js"><link rel="prefetch" href="/assets/js/121.a3dc713c.js"><link rel="prefetch" href="/assets/js/122.d8986c7e.js"><link rel="prefetch" href="/assets/js/13.22ed5907.js"><link rel="prefetch" href="/assets/js/14.c5b3b3dd.js"><link rel="prefetch" href="/assets/js/15.d0f6e033.js"><link rel="prefetch" href="/assets/js/16.8fd740c8.js"><link rel="prefetch" href="/assets/js/17.ec2fa3a6.js"><link rel="prefetch" href="/assets/js/18.d5fac85e.js"><link rel="prefetch" href="/assets/js/19.c5911735.js"><link rel="prefetch" href="/assets/js/20.03059cfc.js"><link rel="prefetch" href="/assets/js/22.f62e39c8.js"><link rel="prefetch" href="/assets/js/23.fbcfd5f6.js"><link rel="prefetch" href="/assets/js/24.e9f442b3.js"><link rel="prefetch" href="/assets/js/25.686cab41.js"><link rel="prefetch" href="/assets/js/26.6970e886.js"><link rel="prefetch" href="/assets/js/27.f734bf64.js"><link rel="prefetch" href="/assets/js/28.f92a44ce.js"><link rel="prefetch" href="/assets/js/29.861135f7.js"><link rel="prefetch" href="/assets/js/3.1cee50f2.js"><link rel="prefetch" href="/assets/js/30.72607cab.js"><link rel="prefetch" href="/assets/js/31.1aadcdb6.js"><link rel="prefetch" href="/assets/js/32.5eff8fe9.js"><link rel="prefetch" href="/assets/js/33.608ebf0b.js"><link rel="prefetch" href="/assets/js/34.554b9575.js"><link rel="prefetch" href="/assets/js/35.88477f57.js"><link rel="prefetch" href="/assets/js/36.2c5d59b0.js"><link rel="prefetch" href="/assets/js/37.83794953.js"><link rel="prefetch" href="/assets/js/38.58ce3a69.js"><link rel="prefetch" href="/assets/js/39.4a067206.js"><link rel="prefetch" href="/assets/js/4.c93ea189.js"><link rel="prefetch" href="/assets/js/40.7bfcd3c3.js"><link rel="prefetch" href="/assets/js/41.179aa8b4.js"><link rel="prefetch" href="/assets/js/42.75a5b251.js"><link rel="prefetch" href="/assets/js/43.16e44f17.js"><link rel="prefetch" href="/assets/js/44.d8be4b11.js"><link rel="prefetch" href="/assets/js/45.5519f4e8.js"><link rel="prefetch" href="/assets/js/46.e29b1183.js"><link rel="prefetch" href="/assets/js/47.e67f4e23.js"><link rel="prefetch" href="/assets/js/48.03051f9b.js"><link rel="prefetch" href="/assets/js/49.ef301a21.js"><link rel="prefetch" href="/assets/js/50.f2d1b294.js"><link rel="prefetch" href="/assets/js/51.472ec714.js"><link rel="prefetch" href="/assets/js/52.7bb76953.js"><link rel="prefetch" href="/assets/js/53.985ed103.js"><link rel="prefetch" href="/assets/js/54.21bc6881.js"><link rel="prefetch" href="/assets/js/55.5a38347c.js"><link rel="prefetch" href="/assets/js/56.627fb483.js"><link rel="prefetch" href="/assets/js/57.e1dedf22.js"><link rel="prefetch" href="/assets/js/58.a77ffd50.js"><link rel="prefetch" href="/assets/js/59.ea75b7f0.js"><link rel="prefetch" href="/assets/js/6.0b07050c.js"><link rel="prefetch" href="/assets/js/60.41e92b11.js"><link rel="prefetch" href="/assets/js/61.e6926c05.js"><link rel="prefetch" href="/assets/js/62.271b57ae.js"><link rel="prefetch" href="/assets/js/63.72e763b1.js"><link rel="prefetch" href="/assets/js/64.9b6ddfde.js"><link rel="prefetch" href="/assets/js/65.991a3739.js"><link rel="prefetch" href="/assets/js/66.19cea808.js"><link rel="prefetch" href="/assets/js/67.02afc173.js"><link rel="prefetch" href="/assets/js/68.97a401f9.js"><link rel="prefetch" href="/assets/js/69.b64d8216.js"><link rel="prefetch" href="/assets/js/7.cb2b2c8b.js"><link rel="prefetch" href="/assets/js/70.4326ce81.js"><link rel="prefetch" href="/assets/js/71.18ca7cbb.js"><link rel="prefetch" href="/assets/js/72.292c2c55.js"><link rel="prefetch" href="/assets/js/73.b184d0e8.js"><link rel="prefetch" href="/assets/js/74.9d135ab2.js"><link rel="prefetch" href="/assets/js/75.f2a7c54b.js"><link rel="prefetch" href="/assets/js/76.944d45da.js"><link rel="prefetch" href="/assets/js/77.4686b4d3.js"><link rel="prefetch" href="/assets/js/78.33ac81aa.js"><link rel="prefetch" href="/assets/js/79.dea3d9c8.js"><link rel="prefetch" href="/assets/js/8.ab46e0f5.js"><link rel="prefetch" href="/assets/js/80.46aa7414.js"><link rel="prefetch" href="/assets/js/81.347bdd7c.js"><link rel="prefetch" href="/assets/js/82.993fcb39.js"><link rel="prefetch" href="/assets/js/83.bd93928e.js"><link rel="prefetch" href="/assets/js/84.b9d47f5c.js"><link rel="prefetch" href="/assets/js/85.a03f770a.js"><link rel="prefetch" href="/assets/js/86.f056179e.js"><link rel="prefetch" href="/assets/js/87.463036e8.js"><link rel="prefetch" href="/assets/js/88.418f3543.js"><link rel="prefetch" href="/assets/js/89.d26a7b2e.js"><link rel="prefetch" href="/assets/js/9.b6485ce4.js"><link rel="prefetch" href="/assets/js/90.9e762339.js"><link rel="prefetch" href="/assets/js/91.20ef3a87.js"><link rel="prefetch" href="/assets/js/92.cc469314.js"><link rel="prefetch" href="/assets/js/93.2e1705b4.js"><link rel="prefetch" href="/assets/js/94.fba85e0d.js"><link rel="prefetch" href="/assets/js/95.1b0c3fda.js"><link rel="prefetch" href="/assets/js/96.6b9d810d.js"><link rel="prefetch" href="/assets/js/97.dc9fd59e.js"><link rel="prefetch" href="/assets/js/98.d6803ea6.js"><link rel="prefetch" href="/assets/js/99.e03b6036.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>duc</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>duc's blog</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="DUC'S Blog" class="logo"> <span class="site-name">DUC'S Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    duc
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>111</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>115</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/laravel/" class="nav-link"><i class="undefined"></i>
+  laravel
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/elasticsearch/" class="nav-link"><i class="undefined"></i>
+  elasticsearch
+</a></li><li class="dropdown-item"><!----> <a href="/categories/php/" class="nav-link"><i class="undefined"></i>
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/categories/composer/" class="nav-link"><i class="undefined"></i>
+  composer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/blog/" class="nav-link"><i class="undefined"></i>
+  blog
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DockerFile/" class="nav-link"><i class="undefined"></i>
+  DockerFile
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方登陆/" class="nav-link"><i class="undefined"></i>
+  第三方登陆
+</a></li><li class="dropdown-item"><!----> <a href="/categories/gitlab/" class="nav-link"><i class="undefined"></i>
+  gitlab
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k8s/" class="nav-link"><i class="undefined"></i>
+  k8s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/响应式/" class="nav-link"><i class="undefined"></i>
+  响应式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/rss/" class="nav-link"><i class="undefined"></i>
+  rss
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前后端分离/" class="nav-link"><i class="undefined"></i>
+  前后端分离
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mysql/" class="nav-link"><i class="undefined"></i>
+  mysql
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Typora/" class="nav-link"><i class="undefined"></i>
+  Typora
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bash/" class="nav-link"><i class="undefined"></i>
+  bash
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ssl/" class="nav-link"><i class="undefined"></i>
+  ssl
+</a></li><li class="dropdown-item"><!----> <a href="/categories/golang/" class="nav-link"><i class="undefined"></i>
+  golang
+</a></li><li class="dropdown-item"><!----> <a href="/categories/go/" class="nav-link"><i class="undefined"></i>
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/内存泄漏/" class="nav-link"><i class="undefined"></i>
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vim/" class="nav-link"><i class="undefined"></i>
+  vim
+</a></li><li class="dropdown-item"><!----> <a href="/categories/github/" class="nav-link"><i class="undefined"></i>
+  github
+</a></li><li class="dropdown-item"><!----> <a href="/categories/链路追踪/" class="nav-link"><i class="undefined"></i>
+  链路追踪
+</a></li><li class="dropdown-item"><!----> <a href="/categories/k3s/" class="nav-link"><i class="undefined"></i>
+  k3s
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/devops/" class="nav-link"><i class="undefined"></i>
+  devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/bitnami/" class="nav-link"><i class="undefined"></i>
+  bitnami
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li><li class="dropdown-item"><!----> <a href="/categories/event-bus/" class="nav-link"><i class="undefined"></i>
+  event-bus
+</a></li><li class="dropdown-item"><!----> <a href="/categories/oauth2/" class="nav-link"><i class="undefined"></i>
+  oauth2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/typescript/" class="nav-link"><i class="undefined"></i>
+  typescript
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>从零开始搭建 gitlab CICD 服务</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">从零开始搭建 gitlab CICD 服务</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>duc</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/5/12</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>gitlab</span><span class="tag-item" data-v-1ff7123e>CICD</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="先搭建gitlab"><a href="#先搭建gitlab" class="header-anchor">#</a> 先搭建gitlab</h2> <blockquote><p>本文使用docker安装gitlab https://docs.gitlab.com/omnibus/docker/</p></blockquote> <p>运行该命令可在本地安装gitlab</p> <blockquote><p>注意 gitlab.example.com 需要在 /ets/hosts 里面配置</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># first step</span>
+<span class="token function">mkdir</span> gitlab <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> gitlab
+
+<span class="token comment"># second</span>
+docker run --detach <span class="token punctuation">\</span>
+    --hostname gitlab.example.com <span class="token punctuation">\</span>
+    --publish <span class="token number">443</span>:443 --publish <span class="token number">80</span>:80 --publish <span class="token number">22</span>:22 <span class="token punctuation">\</span>
+    --name gitlab <span class="token punctuation">\</span>
+    --restart always <span class="token punctuation">\</span>
+    --volume <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>/config:/etc/gitlab <span class="token punctuation">\</span>
+    --volume <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>/logs:/var/log/gitlab <span class="token punctuation">\</span>
+    --volume <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>/data:/var/opt/gitlab <span class="token punctuation">\</span>
+    gitlab/gitlab-ce:latest    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>上面的命令完成后，你会在 <code>gitlab</code> 目录下看到 <code>config</code> <code>logs</code> <code>data</code> 三个目录，分别存着配置日志和数据文件</p> <h3 id="tips"><a href="#tips" class="header-anchor">#</a> tips</h3> <blockquote><p>由于服务启动比较慢，所以如果出现 502 请耐心等几分钟</p></blockquote> <p><img src="/assets/img/2018_12_28_VLlhjOGkk7.eb806507.png" alt="2018_12_28_VLlhjOGkk7.png"></p> <p>等待片刻后，输入密码</p> <p><img src="/assets/img/2018_12_28_NSLYBg5uJu.58cc2a09.png" alt="2018_12_28_NSLYBg5uJu.png">
+注册一个账号</p> <p><img src="/assets/img/2018_12_28_M2ObJ8gZm6.dd1c04e4.png" alt="2018_12_28_M2ObJ8gZm6.png">
+蛋疼的服务器 不玩了cao</p> <h3 id="docker-compose-yaml-参考"><a href="#docker-compose-yaml-参考" class="header-anchor">#</a> docker-compose.yaml 参考</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">gitlab-runnner</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> gitlab/gitlab<span class="token punctuation">-</span>runner
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> gitlabnet
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./runner<span class="token punctuation">-</span>config<span class="token punctuation">:</span>/etc/gitlab<span class="token punctuation">-</span>runner
+      <span class="token punctuation">-</span> /var/run/docker.sock<span class="token punctuation">:</span>/var/run/docker.sock
+  <span class="token key atrule">gitlab</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> gitlab/gitlab<span class="token punctuation">-</span>ce<span class="token punctuation">:</span>latest
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> <span class="token string">'gitlab.example.com'</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> gitlabnet
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./config<span class="token punctuation">:</span>/etc/gitlab
+      <span class="token punctuation">-</span> ./logs<span class="token punctuation">:</span>/var/log/gitlab
+      <span class="token punctuation">-</span> ./data<span class="token punctuation">:</span>/var/opt/gitlab
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token datetime number">80:80</span>
+      <span class="token punctuation">-</span> 443<span class="token punctuation">:</span><span class="token number">443</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;22:22&quot;</span>
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">gitlabnet</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> bridge
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="使用docker搭建runner"><a href="#使用docker搭建runner" class="header-anchor">#</a> 使用docker搭建runner</h2> <h4 id="方法一"><a href="#方法一" class="header-anchor">#</a> 方法一</h4> <p>直接写在 <code>docker-compose.yaml</code> 里面 这里你必须 <code>docker-in-docker</code>  ，使用这条命令</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker run -v /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">..</span>.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>否则在你的docker容器中无法使用docker。</p> <p>不过DinD这种方式好像不太好，具体google。</p> <h4 id="方法二"><a href="#方法二" class="header-anchor">#</a> 方法二</h4> <p>开一台虚拟机，然后当做一台新的服务器来安装docker以及gitlab-runner</p> <h3 id="添加-runner"><a href="#添加-runner" class="header-anchor">#</a> 添加 runner</h3> <p>方法一</p> <p>执行，注册，url 和 token 在项目 setting-&gt; CI/CD  里面有，每个项目都不一样</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>gitlab-runner register 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>方法二</p> <p>直接修改配置文件  config.toml</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># runner-config/config.toml</span>
+concurrent = 1
+check_interval = 0
+
+<span class="token punctuation">[</span>session_server<span class="token punctuation">]</span>
+  session_timeout = 1800
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name = &quot;a&quot;
+  url = &quot;http<span class="token punctuation">:</span>//gitlab.example.com/&quot;
+  token = &quot;fFEGL5JzN9vPKTiyx4s7&quot;
+  executor = &quot;docker&quot;
+  <span class="token punctuation">[</span>runners.docker<span class="token punctuation">]</span>
+    tls_verify = false
+    image = &quot;php<span class="token punctuation">:</span>7.1&quot;
+    privileged = false
+    disable_entrypoint_overwrite = false
+    dns = <span class="token punctuation">[</span><span class="token string">&quot;192.168.99.100&quot;</span><span class="token punctuation">]</span>  <span class="token comment"># 重点！！！，不然你的ci用的docker将无法拉取代码，会connection refused</span>
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+    shm_size = 0
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name = &quot;b&quot;
+  url = &quot;http<span class="token punctuation">:</span>//gitlab.example.com/&quot;
+  token = &quot;3Seirt<span class="token punctuation">-</span>EwZ6RybwaL1wf&quot;
+  executor = &quot;docker&quot;
+  <span class="token punctuation">[</span>runners.docker<span class="token punctuation">]</span>
+    tls_verify = false
+    dns = <span class="token punctuation">[</span><span class="token string">&quot;192.168.99.100&quot;</span><span class="token punctuation">]</span>
+    image = &quot;php<span class="token punctuation">:</span>7.2&quot;
+    privileged = false
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+    shm_size = 0
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name = &quot;ci&quot;
+  url = &quot;http<span class="token punctuation">:</span>//gitlab.example.com/&quot;
+  token = &quot;aMMMxCvrYNA<span class="token punctuation">-</span>E4KfS1Ru&quot;
+  executor = &quot;docker&quot;
+  <span class="token punctuation">[</span>runners.docker<span class="token punctuation">]</span>
+    tls_verify = false
+    image = &quot;php<span class="token punctuation">:</span>7.1&quot;
+    dns = <span class="token punctuation">[</span><span class="token string">&quot;192.168.99.100&quot;</span><span class="token punctuation">]</span>
+    privileged = false
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+    shm_size = 0
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name = &quot;ci&quot;
+  url = &quot;http<span class="token punctuation">:</span>//gitlab.example.com/&quot;
+  token = &quot;n8oB_P2cXeUPwjpLw3n2&quot;
+  executor = &quot;docker&quot;
+  <span class="token punctuation">[</span>runners.docker<span class="token punctuation">]</span>
+    tls_verify = false
+    dns = <span class="token punctuation">[</span><span class="token string">&quot;192.168.99.100&quot;</span><span class="token punctuation">]</span>
+    image = &quot;php<span class="token punctuation">:</span>7.2&quot;
+    privileged = false
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+    shm_size = 0
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br></div></div><h2 id="解决本地搭建docker-ci-runner-dns-服务问题"><a href="#解决本地搭建docker-ci-runner-dns-服务问题" class="header-anchor">#</a> 解决本地搭建docker ci runner DNS 服务问题</h2> <blockquote><p>此举主要是为了解决本地搭建的gitlab</p> <p>-ci runner 中的docker 容器无法解析到本地的 gitlab.example.com</p></blockquote> <ol><li>新开一台linux（我选用docker-machine），安装docker</li> <li><code>docker run -d -p 53:53/tcp -p 53:53/udp --cap-add=NET_ADMIN --name dns-server andyshinn/dnsmasp</code></li> <li><code>docker exec -it dns-server /bin/sh</code></li> <li>vi /etc/resolv.dnsmasq <code>nameserver 114.114.114.114 nameserver 8.8.8.8</code></li> <li>vi /etc/dnsmasqhosts 加入 <code>192.168.200.190 gitlab.example.com</code></li> <li>修改 dnsmasq,  vim /etc/dnsmasq.conf  <code>resolv-file=/etc/resolv.dnsmasq addn-hosts=/etc/dnsmasqhosts</code></li> <li>回到宿主机重启dns服务 <code>docker restart dns-server</code></li> <li>这时候dokcer host 就是一台dns服务器了加入他的地址是 192.168.99.100</li></ol> <blockquote><p>❗️❗️❗️❗️❗️</p> <p>注意这里如果你安照上面那样做了，你做到的只是gitlab-runner 能 ping 通 gitlab.example.com 但是，你gitlab-runner 中的docker容器里面还是没办法ping通的</p> <p>所以你要在 config.toml 中加入 dns 配置项 <code>dns = [&quot;192.168.99.100&quot;]</code>  磕了我两天，wocao</p></blockquote> <h2 id="测试"><a href="#测试" class="header-anchor">#</a> 测试</h2> <p>在gitlab ci 上修改 /etc/resolv.conf</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>nameserver 192.168.99.100
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>就可以直接ping通gitlab.example.com 了</p> <h2 id="gitlab-ci-yml"><a href="#gitlab-ci-yml" class="header-anchor">#</a> .gitlab-ci.yml</h2> <h3 id="一级变量"><a href="#一级变量" class="header-anchor">#</a> 一级变量</h3> <table><thead><tr><th>关键字</th> <th>是否必须</th> <th>描述</th></tr></thead> <tbody><tr><td>image</td> <td>否</td> <td>用于docker镜像，查看<a href="https://docs.gitlab.com/ce/ci/docker/README.html" target="_blank" rel="noopener noreferrer">docker<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>文档</td></tr> <tr><td>services</td> <td>否</td> <td>用于docker服务，查看<a href="https://docs.gitlab.com/ce/ci/docker/README.html" target="_blank" rel="noopener noreferrer">docker<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>文档</td></tr> <tr><td>stages</td> <td>否</td> <td>定义构建阶段</td></tr> <tr><td>types</td> <td>否</td> <td><code>stages</code> 的别名(已废除)</td></tr> <tr><td>before_script</td> <td>否</td> <td>定义在每个job之前运行的命令</td></tr> <tr><td>after_script</td> <td>否</td> <td>定义在每个job之后运行的命令</td></tr> <tr><td>variables</td> <td>否</td> <td>定义构建变量</td></tr> <tr><td>cache</td> <td>否</td> <td>定义一组文件列表，可在后续运行中使用</td></tr></tbody></table> <h3 id="jobs-中的变量"><a href="#jobs-中的变量" class="header-anchor">#</a> Jobs 中的变量</h3> <table><thead><tr><th>Keyword</th> <th>Required</th> <th>Description</th></tr></thead> <tbody><tr><td>script</td> <td>yes</td> <td>Runner执行的命令或脚本</td></tr> <tr><td>image</td> <td>no</td> <td>所使用的docker镜像，查阅<a href="https://docs.gitlab.com/ce/ci/docker/using_docker_images.html#define-image-and-services-from-gitlab-ciyml" target="_blank" rel="noopener noreferrer">使用docker镜像<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></td></tr> <tr><td>services</td> <td>no</td> <td>所使用的docker服务，查阅<a href="https://docs.gitlab.com/ce/ci/docker/using_docker_images.html#define-image-and-services-from-gitlab-ciyml" target="_blank" rel="noopener noreferrer">使用docker镜像<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></td></tr> <tr><td>stage</td> <td>no</td> <td>定义job stage（默认：<code>test</code>）</td></tr> <tr><td>type</td> <td>no</td> <td><code>stage</code>的别名（已弃用）</td></tr> <tr><td>variables</td> <td>no</td> <td>定义job级别的变量</td></tr> <tr><td>only</td> <td>no</td> <td>定义一列git分支，并为其创建job</td></tr> <tr><td>except</td> <td>no</td> <td>定义一列git分支，不创建job</td></tr> <tr><td>tags</td> <td>no</td> <td>定义一列tags，用来指定选择哪个Runner（同时Runner也要设置tags）</td></tr> <tr><td>allow_failure</td> <td>no</td> <td>允许job失败。失败的job不影响commit状态</td></tr> <tr><td>when</td> <td>no</td> <td>定义何时开始job。可以是<code>on_success</code>，<code>on_failure</code>，<code>always</code>或者<code>manual</code></td></tr> <tr><td>dependencies</td> <td>no</td> <td>定义job依赖关系，这样他们就可以互相传递artifacts</td></tr> <tr><td>cache</td> <td>no</td> <td>定义应在后续运行之间缓存的文件列表</td></tr> <tr><td>before_script</td> <td>no</td> <td>重写一组在作业前执行的命令</td></tr> <tr><td>after_script</td> <td>no</td> <td>重写一组在作业后执行的命令</td></tr> <tr><td>environment</td> <td>no</td> <td>定义此作业完成部署的环境名称</td></tr> <tr><td>coverage</td> <td>no</td> <td>定义给定作业的代码覆盖率设置</td></tr></tbody></table> <h2 id="在-laravel-中-cicd"><a href="#在-laravel-中-cicd" class="header-anchor">#</a> 在 laravel 中 cicd</h2> <blockquote><p>完整版请参考 https://github.com/ohdearapp/gitlab-ci-pipeline-for-laravel</p></blockquote> <p>简单案例参考</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">stages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> preparation
+  <span class="token punctuation">-</span> testing
+  <span class="token punctuation">-</span> deploy
+
+<span class="token key atrule">variables</span><span class="token punctuation">:</span>
+  <span class="token key atrule">REDIS_PORT</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+
+<span class="token key atrule">composer</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> preparation
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> edbizarro/gitlab<span class="token punctuation">-</span>ci<span class="token punctuation">-</span>pipeline<span class="token punctuation">-</span>php<span class="token punctuation">:</span><span class="token number">7.2</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> duc72
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> php <span class="token punctuation">-</span>v
+    <span class="token punctuation">-</span> composer install <span class="token punctuation">-</span><span class="token punctuation">-</span>prefer<span class="token punctuation">-</span>dist <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>ansi <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>interaction <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>progress <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>scripts
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> vendor/
+      <span class="token punctuation">-</span> .env
+    <span class="token key atrule">expire_in</span><span class="token punctuation">:</span> 1 days
+    <span class="token key atrule">when</span><span class="token punctuation">:</span> always
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> vendor/
+
+<span class="token key atrule">phpunit</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> testing
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> edbizarro/gitlab<span class="token punctuation">-</span>ci<span class="token punctuation">-</span>pipeline<span class="token punctuation">-</span>php<span class="token punctuation">:</span><span class="token number">7.2</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> duc72
+  <span class="token key atrule">services</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> redis<span class="token punctuation">:</span>latest
+  <span class="token key atrule">dependencies</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> composer
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> php <span class="token punctuation">-</span>v
+    <span class="token punctuation">-</span> ./vendor/phpunit/phpunit/phpunit <span class="token punctuation">-</span><span class="token punctuation">-</span>version
+    <span class="token punctuation">-</span> php <span class="token punctuation">-</span>d short_open_tag=off ./vendor/phpunit/phpunit/phpunit <span class="token punctuation">-</span>v <span class="token punctuation">-</span><span class="token punctuation">-</span>colors=never <span class="token punctuation">-</span><span class="token punctuation">-</span>stderr
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./storage/logs <span class="token comment"># for debugging</span>
+    <span class="token key atrule">expire_in</span><span class="token punctuation">:</span> 1 days
+    <span class="token key atrule">when</span><span class="token punctuation">:</span> on_failure
+
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> deploy
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> docker build <span class="token punctuation">-</span>t duc/app .
+    <span class="token punctuation">-</span> docker rm duc/app <span class="token punctuation">-</span>f
+    <span class="token punctuation">-</span> docker run <span class="token punctuation">-</span>d <span class="token punctuation">-</span>p 8080<span class="token punctuation">:</span>80 duc/app
+   <span class="token key atrule">tags</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> on_shell
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><h2 id="测试中遇到的问题"><a href="#测试中遇到的问题" class="header-anchor">#</a> 测试中遇到的问题</h2> <p>如果你的测试中使用了 redis 那么可能会出现</p> <p>问题原因 https://github.com/laravel/framework/issues/7904</p> <blockquote><p>在我的情况下，问题是OS环境变量REDIS_PORT被设置为</p> <p><code>REDIS_PORT=tcp://172.17.0.4:6379</code>
+并覆盖Laravel .env文件中设置的REDIS_PORT。</p> <p>也许Artisan获得OS环境变量。我解决了它将OS环境变量REDIS_PORT设置为</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code>REDIS_PORT=6379
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>我使用docker和docker-compose，所以我只修改了我的docker-compose.yml，添加了这两行：</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code>   <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">REDIS_PORT</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>Connection refused [tcp://redis:tcp://172.17.0.3:6379]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>解决：在 .gitlab-ci.yaml 中加入环境变量</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">variables</span><span class="token punctuation">:</span>
+  <span class="token key atrule">REDIS_PORT</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="最后"><a href="#最后" class="header-anchor">#</a> 最后</h2> <p>本文只是简单实现，更多配置，更多参数，请去研究官方文档！</p> <blockquote><p>在无数次删除容器，修改配置，提交代码测试中，通过了测试😭</p></blockquote> <p><img src="/assets/img/2018_12_28_5AEYZVgsFl.574e906c.png" alt="2018_12_28_5AEYZVgsFl.png">
+这些只是简单的实现了ci/cd ，也为我之后学习 kubernetes 打下基础😄</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021/5/27上午9:14:10</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#先搭建gitlab" class="sidebar-link reco-side-先搭建gitlab" data-v-70334359>先搭建gitlab</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#tips" class="sidebar-link reco-side-tips" data-v-70334359>tips</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#docker-compose-yaml-参考" class="sidebar-link reco-side-docker-compose-yaml-参考" data-v-70334359>docker-compose.yaml 参考</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#使用docker搭建runner" class="sidebar-link reco-side-使用docker搭建runner" data-v-70334359>使用docker搭建runner</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#添加-runner" class="sidebar-link reco-side-添加-runner" data-v-70334359>添加 runner</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#解决本地搭建docker-ci-runner-dns-服务问题" class="sidebar-link reco-side-解决本地搭建docker-ci-runner-dns-服务问题" data-v-70334359>解决本地搭建docker ci runner DNS 服务问题</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#测试" class="sidebar-link reco-side-测试" data-v-70334359>测试</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#gitlab-ci-yml" class="sidebar-link reco-side-gitlab-ci-yml" data-v-70334359>.gitlab-ci.yml</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#一级变量" class="sidebar-link reco-side-一级变量" data-v-70334359>一级变量</a></li><li class="level-3" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#jobs-中的变量" class="sidebar-link reco-side-jobs-中的变量" data-v-70334359>Jobs 中的变量</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#在-laravel-中-cicd" class="sidebar-link reco-side-在-laravel-中-cicd" data-v-70334359>在 laravel 中 cicd</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#测试中遇到的问题" class="sidebar-link reco-side-测试中遇到的问题" data-v-70334359>测试中遇到的问题</a></li><li class="level-2" data-v-70334359><a href="/blogs/2018/gitlab_cicd.html#最后" class="sidebar-link reco-side-最后" data-v-70334359>最后</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.ba88b123.js" defer></script><script src="/assets/js/5.2bd63de2.js" defer></script><script src="/assets/js/1.e5a4237d.js" defer></script><script src="/assets/js/21.55e42ef2.js" defer></script>
+  </body>
+</html>
