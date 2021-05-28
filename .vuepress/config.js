@@ -27,12 +27,12 @@ module.exports = {
         "icon": "reco-home"
       },
       {
-        "text": "TimeLine",
+        "text": "时间轴",
         "link": "/timeline/",
         "icon": "reco-date"
       },
       {
-        "text": "Contact",
+        "text": "联系",
         "icon": "reco-message",
         "items": [
           {
@@ -48,11 +48,11 @@ module.exports = {
     "blogConfig": {
       "category": {
         "location": 2,
-        "text": "Category"
+        "text": "分类"
       },
       "tag": {
         "location": 3,
-        "text": "Tag"
+        "text": "标签"
       }
     },
     "friendLink": [
@@ -66,20 +66,20 @@ module.exports = {
     "logo": "/logo.png",
     "search": true,
     "searchMaxSuggestions": 10,
-    "lastUpdated": "Last Updated",
+    "lastUpdated": "最后更新于",
     "author": "duc",
     "authorAvatar": "/avatar.png",
-    "record": "xxxx",
+    // "record": "",
     "startYear": "2017"
   },
   "markdown": {
     "lineNumbers": true
   },
-  locales: {
+  "locales": {
     '/': {
-      lang: 'zh-CN',
+      lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
       title: 'DUC\'S Blog',
-      description: 'Vue-powered Static Site Generator'
+      description: 'Vue 驱动的静态网站生成器'
     },
   }
 }

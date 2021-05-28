@@ -1,10 +1,11 @@
 ---
 title: 移除git中的大文件
-date: '2021-05-12 12:54:14'
+date: "2019-05-13 21:18:10"
 sidebar: false
 categories:
- - git
+ - 技术
 tags:
+ - git
  - 效率提升
 publish: true
 ---

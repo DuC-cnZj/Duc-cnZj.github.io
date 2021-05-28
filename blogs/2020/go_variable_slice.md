@@ -1,9 +1,9 @@
 ---
 title: Go 语言可变参数函数终极指南
-date: '2021-05-12 12:54:14'
+date: '2020-06-19 11:48:26'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - slice
  - golang

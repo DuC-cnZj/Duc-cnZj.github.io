@@ -1,9 +1,9 @@
 ---
 title: gitlab相关问题
-date: '2021-05-12 12:54:14'
+date: "2018-12-28 10:31:41"
 sidebar: true
 categories:
- - gitlab
+ - 技术
 tags:
  - gitlab
 publish: true

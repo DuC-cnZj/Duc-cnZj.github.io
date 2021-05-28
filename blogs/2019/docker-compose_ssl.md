@@ -1,12 +1,12 @@
 ---
 title: docker-compose 服务安装 ssl
-date: '2021-05-12 12:54:14'
+date: "2019-08-27 12:09:45"
 sidebar: false
 categories:
- - ssl
+ - 技术
 tags:
  - docker-compose
- - OpenID connect
+ - ssl
 publish: true
 ---
 

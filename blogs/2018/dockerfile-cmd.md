@@ -1,9 +1,9 @@
 ---
 title: DockerFile 命令总结
-date: '2021-05-12 12:54:14'
+date: "2018-12-10 12:50:39"
 sidebar: true
 categories:
- - DockerFile
+ - 技术
 tags:
  - DockerFile
 publish: true

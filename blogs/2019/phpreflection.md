@@ -1,9 +1,9 @@
 ---
 title: php 反射
-date: '2021-05-12 12:54:14'
+date: '2019-10-15 12:36:38'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - 反射
  - php

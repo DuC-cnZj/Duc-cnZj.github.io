@@ -1,9 +1,9 @@
 ---
 title: mysql null 的坑
-date: '2021-05-12 12:54:11'
+date: "2019-09-04 11:35:21"
 sidebar: false
 categories:
- - mysql
+ - 技术
 tags:
  - mysql
 publish: true

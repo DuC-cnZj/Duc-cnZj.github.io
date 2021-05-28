@@ -1,10 +1,11 @@
 ---
 title: vue 生命周期
-date: '2021-05-12 12:54:14'
+date: "2018-10-29 15:47:59"
 sidebar: false
 categories:
- - vue
+ - 技术
 tags:
+ - vue
  - 生命周期
 publish: true
 ---

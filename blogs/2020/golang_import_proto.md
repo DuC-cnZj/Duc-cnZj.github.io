@@ -1,9 +1,9 @@
 ---
 title: golang 引入其他包的 proto 文件
-date: '2021-05-12 12:54:14'
+date: '2020-11-12 17:13:41'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - protobuf
  - golang

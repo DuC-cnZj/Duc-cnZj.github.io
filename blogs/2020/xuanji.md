@@ -1,10 +1,11 @@
 ---
 title: 玄机
-date: '2021-05-12 12:54:14'
+date: '2020-09-30 20:40:51'
 sidebar: false
 categories:
- - devops
+ - 技术
 tags:
+ - devops
  - xuanji
  - k8s
 publish: true

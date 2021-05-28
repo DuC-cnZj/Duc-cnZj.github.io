@@ -1,10 +1,11 @@
 ---
 title:  设计模式---装饰器模式（Decorator Pattern）
-date: '2021-05-12 12:54:14'
+date: "2018-10-29 14:51:09"
 sidebar: false
 categories:
- - 设计模式
+ - 技术
 tags:
+ - 设计模式
  - 装饰器模式
 publish: true
 ---

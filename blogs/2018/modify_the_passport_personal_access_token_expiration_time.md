@@ -1,9 +1,9 @@
 ---
 title: Laravel 中如何更方便的修改 Passport Personal Access Token 过期时间
-date: '2021-05-12 12:54:14'
+date: "2018-12-28 10:53:19"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
  - laravel
  - Passport

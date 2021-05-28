@@ -1,9 +1,9 @@
 ---
 title:  别在你的 api resource 资源类中查询数据库
-date: '2021-05-12 12:54:14'
+date: "2018-12-17 11:22:57"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
  - laravel
  - api

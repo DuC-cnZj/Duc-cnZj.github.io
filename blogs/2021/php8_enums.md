@@ -1,9 +1,9 @@
 ---
 title: php enums
-date: '2021-05-12 12:54:14'
+date: '2021-02-19 18:03:31'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - php8
  - enum

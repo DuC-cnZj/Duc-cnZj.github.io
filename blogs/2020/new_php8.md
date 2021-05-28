@@ -1,9 +1,9 @@
 ---
 title: What's new in PHP 8
-date: '2021-05-12 12:54:14'
+date: '2020-10-28 09:54:44'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - php8
 publish: true

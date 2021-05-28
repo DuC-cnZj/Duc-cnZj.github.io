@@ -1,9 +1,9 @@
 ---
 title: 绕过爸爸调用爷爷的方法
-date: '2021-05-12 12:54:14'
+date: '2019-10-09 13:20:44'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - tip
  - php

@@ -1,9 +1,9 @@
 ---
 title: 我们用于Laravel应用程序的Gitlab CI管道
-date: '2021-05-12 12:54:14'
+date: "2018-12-15 09:24:55"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
  - laravel
  - gitlab

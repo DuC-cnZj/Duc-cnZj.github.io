@@ -1,9 +1,9 @@
 ---
 title:  课程名称：Redis5.0之12项新特性  
-date: '2021-05-12 12:54:14'
+date: "2018-12-24 10:30:50"
 sidebar: true
 categories:
- - redis
+ - 技术
 tags:
  - redis
 publish: true

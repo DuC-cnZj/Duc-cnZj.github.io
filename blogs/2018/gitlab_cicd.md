@@ -1,9 +1,9 @@
 ---
 title: 从零开始搭建 gitlab CICD 服务
-date: '2021-05-12 12:54:14'
+date: "2018-12-28 10:17:01"
 sidebar: true
 categories:
- - gitlab
+ - 技术
 tags:
  - gitlab
  - CICD

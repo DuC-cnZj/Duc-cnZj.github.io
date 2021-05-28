@@ -1,9 +1,9 @@
 ---
 title: Laravel 自定义request类如何自动实现表单验证
-date: '2021-05-12 12:54:14'
+date: '2019-12-12 18:36:06'
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - 源码解读
 publish: true

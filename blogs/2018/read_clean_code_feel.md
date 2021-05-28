@@ -1,9 +1,9 @@
 ---
 title: 读 《简洁的代码》有感
-date: '2021-05-12 12:54:14'
+date: "2018-12-05 16:41:50"
 sidebar: false
 categories:
- - book
+ - 书籍
 tags:
  - book
 publish: true

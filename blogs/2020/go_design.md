@@ -1,9 +1,9 @@
 ---
 title: go还能这样写!
-date: '2021-05-12 12:54:14'
+date: '2020-06-12 11:01:34'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - design 
  - golang

@@ -1,10 +1,11 @@
 ---
 title: Jsonapi 在 laravel 中简单的实现
-date: '2021-05-12 12:54:14'
+date: "2019-04-01 11:58:55"
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
+ - laravel
  - Jsonapi
 publish: true
 ---

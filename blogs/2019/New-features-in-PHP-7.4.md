@@ -1,9 +1,9 @@
 ---
 title: php 7.4 新特性
-date: '2021-05-12 12:54:14'
+date: "2019-04-25 13:14:29"
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - php7.4
 publish: true

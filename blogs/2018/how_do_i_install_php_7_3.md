@@ -1,11 +1,11 @@
 ---
 title: 如何安装php 7.3
-date: '2021-05-12 12:54:14'
+date: "2018-12-11 08:43:41"
 sidebar: true
 categories:
- - php
+ - 技术
 tags:
- - php
+ - php7.3
 publish: true
 ---
 

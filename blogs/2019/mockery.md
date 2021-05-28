@@ -1,9 +1,9 @@
 ---
 title: 用 Mockery mock 数据
-date: '2021-05-12 12:54:14'
+date: '2019-10-08 11:55:24'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - mockery
  - php

@@ -1,9 +1,9 @@
 ---
 title: Go http 解读
-date: '2021-05-12 12:54:14'
+date: '2019-12-31 12:04:00'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - golang
  - http

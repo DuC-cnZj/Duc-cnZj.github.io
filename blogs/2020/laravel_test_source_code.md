@@ -1,9 +1,9 @@
 ---
 title: Laravel测试代码解读之还能这么玩
-date: '2021-05-12 12:54:14'
+date: '2020-06-28 12:14:19'
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - laravel
  - test

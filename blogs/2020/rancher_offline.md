@@ -1,9 +1,9 @@
 ---
 title: 记录一次 k3s 离线安装高可用 rancher
-date: '2021-05-12 12:54:14'
+date: '2020-09-05 18:25:28'
 sidebar: false
 categories:
- - k3s
+ - 技术
 tags:
  - k3s
  - k8s

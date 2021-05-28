@@ -1,9 +1,9 @@
 ---
 title: 多语言微服务版本管理实践
-date: '2021-05-12 12:54:14'
+date: '2020-11-06 22:58:36'
 sidebar: false
 categories:
- - 微服务
+ - 技术
 tags:
  - 微服务
  - php

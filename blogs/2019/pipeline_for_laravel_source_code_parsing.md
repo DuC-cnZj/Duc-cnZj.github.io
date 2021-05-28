@@ -1,10 +1,11 @@
 ---
 title: laravel 源码解析之 Pipeline
-date: '2021-05-12 12:54:14'
+date: "2019-01-16 12:55:38"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
+ - laravel
  - 源码解析
  - Pipeline
 publish: true

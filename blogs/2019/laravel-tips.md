@@ -1,11 +1,12 @@
 ---
 title: Laravel tips
-date: '2021-05-12 12:54:14'
+date: "2019-05-30 10:38:26"
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - tips
+ - laravel
 publish: true
 ---
 

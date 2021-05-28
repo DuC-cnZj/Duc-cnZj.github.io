@@ -1,9 +1,9 @@
 ---
 title: 读 JavaScript 教程 后感
-date: '2021-05-12 12:54:14'
+date: "2018-12-24 16:19:23"
 sidebar: true
 categories:
- - JavaScript
+ - 技术
 tags:
  - JavaScript
 publish: true

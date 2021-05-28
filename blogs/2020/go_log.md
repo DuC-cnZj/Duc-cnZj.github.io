@@ -1,9 +1,9 @@
 ---
 title: go log 包学习意外收获
-date: '2021-05-12 12:54:14'
+date: '2020-06-17 11:46:00'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - log 
  - golang

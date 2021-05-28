@@ -1,9 +1,9 @@
 ---
 title: 内存泄漏
-date: '2021-05-12 12:54:14'
+date: "2019-05-09 09:53:24"
 sidebar: false
 categories:
- - 内存泄漏
+ - 技术
 tags:
  - 内存泄漏
 publish: true

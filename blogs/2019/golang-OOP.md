@@ -1,10 +1,11 @@
 ---
 title: 面向对象编程
-date: '2021-05-12 12:54:14'
+date: "2019-08-02 09:51:54"
 sidebar: false
 categories:
- - go
+ - 技术
 tags:
+ - golang
  - 面向对象编程
 publish: true
 ---

@@ -1,9 +1,9 @@
 ---
 title: 一个空 struct 的“坑”(变量逃逸)
-date: '2021-05-12 12:54:14'
+date: '2020-06-07 17:52:22'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - golang
 publish: true

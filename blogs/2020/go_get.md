@@ -1,9 +1,9 @@
 ---
 title: go get 实践
-date: '2021-05-12 12:54:14'
+date: '2020-06-18 17:45:47'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - go get 
  - golang

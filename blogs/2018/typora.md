@@ -1,9 +1,9 @@
 ---
 title: Typora 快捷键大全
-date: '2021-05-12 12:54:14'
+date: "2018-12-17 11:41:59"
 sidebar: true
 categories:
- - Typora
+ - 工具
 tags:
  - Typora
 publish: true

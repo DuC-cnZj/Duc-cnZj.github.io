@@ -1,9 +1,9 @@
 ---
 title: Using Custom Eloquent Casts in Laravel 7
-date: '2021-05-12 12:54:14'
+date: '2020-03-04 20:50:36'
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - Eloquent
  - laravel

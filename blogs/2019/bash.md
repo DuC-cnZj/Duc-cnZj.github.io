@@ -1,9 +1,9 @@
 ---
 title: 让你提升命令行效率的 Bash 快捷键
-date: '2021-05-12 12:54:14'
+date: "2019-05-23 11:09:21"
 sidebar: false
 categories:
- - bash
+ - 技术
 tags:
  - bash
  - 效率提升

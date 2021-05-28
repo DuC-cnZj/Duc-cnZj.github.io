@@ -1,9 +1,9 @@
 ---
 title: php Closure 理解
-date: '2021-05-12 12:54:14'
+date: '2019-10-15 13:32:45'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - Closure
  - php

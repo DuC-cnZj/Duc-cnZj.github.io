@@ -1,9 +1,9 @@
 ---
 title:  设计模式小记
-date: '2021-05-12 12:54:14'
+date: "2018-12-07 12:55:29"
 sidebar: false
 categories:
- - 设计模式
+ - 技术
 tags:
  - 设计模式
 publish: true

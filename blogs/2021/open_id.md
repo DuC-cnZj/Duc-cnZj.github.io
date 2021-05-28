@@ -1,9 +1,9 @@
 ---
 title: OAuth2 & OpenID connect
-date: '2021-05-12 12:54:14'
+date: '2021-02-10 11:11:14'
 sidebar: false
 categories:
- - oauth2
+ - 技术
 tags:
  - OAuth2
  - OpenID connect

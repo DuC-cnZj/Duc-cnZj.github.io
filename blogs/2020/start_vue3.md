@@ -1,9 +1,9 @@
 ---
 title: vue3快速上手-起始和新特性解读
-date: '2021-05-12 12:54:14'
+date: '2020-10-19 13:26:16'
 sidebar: false
 categories:
- - vue
+ - 技术
 tags:
  - vue3
 publish: true

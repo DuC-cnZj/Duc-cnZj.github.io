@@ -1,9 +1,9 @@
 ---
 title: 动态改变数据库尝试
-date: '2021-05-12 12:54:14'
+date: "2019-01-03 17:53:48"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
  - laravel
 publish: true

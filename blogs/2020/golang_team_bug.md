@@ -1,9 +1,9 @@
 ---
 title: google team 也会写这样的bug?
-date: '2021-05-12 12:54:14'
+date: '2020-06-19 19:36:35'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - bug
  - google

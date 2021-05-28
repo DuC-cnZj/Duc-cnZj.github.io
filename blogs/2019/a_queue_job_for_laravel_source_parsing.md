@@ -1,10 +1,11 @@
 ---
 title: Laravel 源码解析之 队列Job
-date: '2021-05-12 12:54:14'
+date: "2019-01-25 14:27:12"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
+ - laravel
  - 源码解析
  - Job
 publish: true

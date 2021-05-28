@@ -1,9 +1,9 @@
 ---
 title: 记一次vue.js的中央事件总线event bus重复执行的bug
-date: '2021-05-12 12:54:14'
+date: "2018-11-26 16:23:08"
 sidebar: false
 categories:
- - vue
+ - 技术
 tags:
  - vue
  - eventbus

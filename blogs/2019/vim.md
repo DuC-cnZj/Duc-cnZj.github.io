@@ -1,9 +1,9 @@
 ---
 title: Vim 练级攻略
-date: '2021-05-12 12:54:14'
+date: "2019-05-17 09:51:21"
 sidebar: false
 categories:
- - vim
+ - 技术
 tags:
  - vim
  - 效率提升

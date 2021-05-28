@@ -1,9 +1,9 @@
 ---
 title: 记录博客前端页面api升级(php to go)
-date: '2021-05-12 12:54:14'
+date: '2020-06-16 20:04:26'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - php 
  - blog 

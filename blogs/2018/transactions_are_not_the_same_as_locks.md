@@ -1,9 +1,9 @@
 ---
 title:  事务与锁是不同的
-date: '2021-05-12 12:54:14'
+date: "2018-12-05 13:11:28"
 sidebar: false
 categories:
- - mysql
+ - 技术
 tags:
  - mysql
 publish: true

@@ -1,12 +1,13 @@
 ---
 title: laravel 源码解析之 路由
-date: '2021-05-12 12:54:14'
+date: "2019-04-02 12:40:23"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
  - 源码解析
  - 路由
+ - laravel
 publish: true
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: golang pipeline
-date: '2021-05-12 12:54:14'
+date: '2019-10-18 16:22:25'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - golang
  - pipeline

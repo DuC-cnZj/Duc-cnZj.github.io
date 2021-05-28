@@ -3,7 +3,7 @@ title: 使用 k8s 实现灰度发布
 date: '2021-05-12 12:54:14'
 sidebar: false
 categories:
- - k8s
+ - 技术
 tags:
  - 灰度发布/金丝雀发布
  - ingress

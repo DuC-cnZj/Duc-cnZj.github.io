@@ -1,9 +1,9 @@
 ---
 title: php tip
-date: '2021-05-12 12:54:14'
+date: '2019-10-10 11:52:55'
 sidebar: false
 categories:
- - php
+ - 技术
 tags:
  - tip
  - php

@@ -1,11 +1,12 @@
 ---
 title:  博客新功能之socket同步评论
-date: '2021-05-12 12:54:14'
+date: "2018-12-22 13:28:30"
 sidebar: true
 categories:
- - blog
+ - 技术
 tags:
  - blog
+ - websocket
 publish: true
 ---
 

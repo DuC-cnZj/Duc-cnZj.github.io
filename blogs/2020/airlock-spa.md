@@ -1,9 +1,9 @@
 ---
 title: laravel (airlock/sanctum) spa 用户认证
-date: '2021-05-12 12:54:14'
+date: '2020-01-13 16:54:14'
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - airlock/sanctum
  - spa

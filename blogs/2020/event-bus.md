@@ -1,9 +1,9 @@
 ---
 title: 微服务消息总线
-date: '2021-05-12 12:54:14'
+date: '2020-11-22 21:06:21'
 sidebar: false
 categories:
- - event-bus
+ - 技术
 tags:
  - event-bus
  - 微服务消息总线

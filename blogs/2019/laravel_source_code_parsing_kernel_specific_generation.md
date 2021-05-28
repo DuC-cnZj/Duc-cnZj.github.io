@@ -1,10 +1,11 @@
 ---
 title: Laravel 源码解析之 Kernel 具体生成
-date: '2021-05-12 12:54:14'
+date: "2019-01-15 14:32:17"
 sidebar: true
 categories:
- - laravel
+ - 技术
 tags:
+ - laravel
  - 源码解析
  - Kernel
 publish: true

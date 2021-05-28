@@ -1,9 +1,9 @@
 ---
 title: signal 信号之平滑退出
-date: '2021-05-12 12:54:14'
+date: '2020-01-08 14:34:05'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - golang
  - signal

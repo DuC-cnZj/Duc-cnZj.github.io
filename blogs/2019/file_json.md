@@ -1,11 +1,12 @@
 ---
 title: 文件操作
-date: '2021-05-12 12:54:14'
+date: "2019-08-06 11:55:40"
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - 文件操作
+ - golang
 publish: true
 ---
 

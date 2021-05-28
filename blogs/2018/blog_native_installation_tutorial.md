@@ -1,9 +1,9 @@
 ---
 title: 博客本地安装教程
-date: '2021-05-12 12:54:14'
+date: "2018-12-18 09:56:26"
 sidebar: true
 categories:
- - blog
+ - 技术
 tags:
  - blog
 publish: true

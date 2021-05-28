@@ -1,9 +1,9 @@
 ---
 title: k8s
-date: '2021-05-12 12:54:14'
+date: "2019-03-20 09:58:56"
 sidebar: false
 categories:
- - k8s
+ - 技术
 tags:
  - k8s
 publish: true

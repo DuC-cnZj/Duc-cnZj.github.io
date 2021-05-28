@@ -1,10 +1,11 @@
 ---
 title: 变量
-date: '2021-05-12 12:54:14'
+date: "2019-07-25 13:11:22"
 sidebar: false
 categories:
- - go
+ - 技术
 tags:
+ - golang
  - 变量
 publish: true
 ---

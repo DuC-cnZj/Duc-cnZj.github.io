@@ -1,9 +1,9 @@
 ---
 title: 使用 go generate
-date: '2021-05-12 12:54:14'
+date: '2020-06-10 16:16:39'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - go generate 
  - golang

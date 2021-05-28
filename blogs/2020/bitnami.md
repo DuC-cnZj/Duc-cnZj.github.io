@@ -1,9 +1,9 @@
 ---
 title: 为 bitnami 贡献开源代码啦，哈哈哈哈
-date: '2021-05-12 12:54:14'
+date: '2020-12-15 17:38:29'
 sidebar: false
 categories:
- - bitnami
+ - 技术
 tags:
  - source code
  - bitnami

@@ -1,9 +1,9 @@
 ---
 title: laravel 个性化语言设置
-date: '2021-05-12 12:54:14'
+date: '2019-10-05 10:30:20'
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - laravel
  - lang

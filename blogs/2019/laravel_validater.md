@@ -1,9 +1,9 @@
 ---
 title: laravel 源码解析之 validater
-date: '2021-05-12 12:54:14'
+date: '2019-10-02 16:57:05'
 sidebar: false
 categories:
- - laravel
+ - 技术
 tags:
  - 源码解析
  - laravel
