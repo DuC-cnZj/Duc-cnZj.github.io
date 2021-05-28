@@ -1,9 +1,9 @@
 ---
 title: Golang 面试题
-date: '2021-05-12 12:54:14'
+date: '2019-10-31 18:10:16'
 sidebar: false
 categories:
- - golang
+ - 技术
 tags:
  - golang
  - 面试题
