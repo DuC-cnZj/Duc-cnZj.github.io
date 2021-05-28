@@ -1,5 +1,5 @@
 ---
-title:  'SplFileInfo::getSize()' stat failed 记一次laravel 图片上传报错
+title: stat failed 记一次laravel 图片上传报错
 date: "2018-11-16 15:17:44"
 sidebar: false
 categories:
