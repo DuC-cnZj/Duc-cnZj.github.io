@@ -70,7 +70,7 @@ module.exports = {
     "author": "duc",
     "authorAvatar": "/avatar.png",
     // "record": "",
-    "startYear": "2017"
+    "startYear": "2018"
   },
   "markdown": {
     "lineNumbers": true
