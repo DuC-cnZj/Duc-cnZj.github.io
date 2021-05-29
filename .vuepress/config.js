@@ -79,7 +79,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
       title: 'DUC\'S Blog',
-      description: 'Vue 驱动的静态网站生成器'
+      description: '何时才能暴富'
     },
   }
 }
