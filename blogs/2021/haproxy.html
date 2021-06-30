@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>haproxy 笔记 | DUC&#39;S Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="何时才能暴富">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.4406823a.js" as="script"><link rel="preload" href="/assets/js/5.4318616b.js" as="script"><link rel="preload" href="/assets/js/1.84a83f87.js" as="script"><link rel="preload" href="/assets/js/130.6c871cc7.js" as="script"><link rel="prefetch" href="/assets/js/10.73e57743.js"><link rel="prefetch" href="/assets/js/100.3f738022.js"><link rel="prefetch" href="/assets/js/101.91aff247.js"><link rel="prefetch" href="/assets/js/102.bff5a109.js"><link rel="prefetch" href="/assets/js/103.ceb6d3ab.js"><link rel="prefetch" href="/assets/js/104.ce1fc1f9.js"><link rel="prefetch" href="/assets/js/105.9f3057a8.js"><link rel="prefetch" href="/assets/js/106.1334d6c0.js"><link rel="prefetch" href="/assets/js/107.6cb032ae.js"><link rel="prefetch" href="/assets/js/108.dc2c611e.js"><link rel="prefetch" href="/assets/js/109.df05d080.js"><link rel="prefetch" href="/assets/js/11.ac6ff206.js"><link rel="prefetch" href="/assets/js/110.c64578bb.js"><link rel="prefetch" href="/assets/js/111.df5d9b82.js"><link rel="prefetch" href="/assets/js/112.5a5f5028.js"><link rel="prefetch" href="/assets/js/113.2b6e8df0.js"><link rel="prefetch" href="/assets/js/114.c51a1017.js"><link rel="prefetch" href="/assets/js/115.7fd8a9c2.js"><link rel="prefetch" href="/assets/js/116.5c502ac0.js"><link rel="prefetch" href="/assets/js/117.cb048c7c.js"><link rel="prefetch" href="/assets/js/118.49d674f2.js"><link rel="prefetch" href="/assets/js/119.692b6df3.js"><link rel="prefetch" href="/assets/js/12.963ed642.js"><link rel="prefetch" href="/assets/js/120.590f5c31.js"><link rel="prefetch" href="/assets/js/121.54def3d0.js"><link rel="prefetch" href="/assets/js/122.0cd81229.js"><link rel="prefetch" href="/assets/js/123.3ef3e1c2.js"><link rel="prefetch" href="/assets/js/124.8abe8d01.js"><link rel="prefetch" href="/assets/js/125.02023632.js"><link rel="prefetch" href="/assets/js/126.f795e765.js"><link rel="prefetch" href="/assets/js/127.bbebf654.js"><link rel="prefetch" href="/assets/js/128.ba59b232.js"><link rel="prefetch" href="/assets/js/129.3cf88eb3.js"><link rel="prefetch" href="/assets/js/13.e57131a8.js"><link rel="prefetch" href="/assets/js/131.9ac8da13.js"><link rel="prefetch" href="/assets/js/132.e9542c4b.js"><link rel="prefetch" href="/assets/js/133.08de45fb.js"><link rel="prefetch" href="/assets/js/134.6297b6a2.js"><link rel="prefetch" href="/assets/js/135.44a2bc13.js"><link rel="prefetch" href="/assets/js/136.ea349ec9.js"><link rel="prefetch" href="/assets/js/14.6219dafd.js"><link rel="prefetch" href="/assets/js/15.cfc96aa0.js"><link rel="prefetch" href="/assets/js/16.e4d2cb93.js"><link rel="prefetch" href="/assets/js/17.cae163ec.js"><link rel="prefetch" href="/assets/js/18.63da70da.js"><link rel="prefetch" href="/assets/js/19.7ef0f711.js"><link rel="prefetch" href="/assets/js/20.d7b2a471.js"><link rel="prefetch" href="/assets/js/21.56a5d027.js"><link rel="prefetch" href="/assets/js/22.81de3243.js"><link rel="prefetch" href="/assets/js/23.4561504d.js"><link rel="prefetch" href="/assets/js/24.92762dc4.js"><link rel="prefetch" href="/assets/js/25.32df244b.js"><link rel="prefetch" href="/assets/js/26.bf30e321.js"><link rel="prefetch" href="/assets/js/27.d2399d0a.js"><link rel="prefetch" href="/assets/js/28.54a6c31b.js"><link rel="prefetch" href="/assets/js/29.22894a7e.js"><link rel="prefetch" href="/assets/js/3.6169f2c5.js"><link rel="prefetch" href="/assets/js/30.2cf60755.js"><link rel="prefetch" href="/assets/js/31.1bd08c27.js"><link rel="prefetch" href="/assets/js/32.a68a3159.js"><link rel="prefetch" href="/assets/js/33.32ffd6a0.js"><link rel="prefetch" href="/assets/js/34.f1b747e6.js"><link rel="prefetch" href="/assets/js/35.cee06945.js"><link rel="prefetch" href="/assets/js/36.e5810799.js"><link rel="prefetch" href="/assets/js/37.e34fea73.js"><link rel="prefetch" href="/assets/js/38.87ebc594.js"><link rel="prefetch" href="/assets/js/39.825e963b.js"><link rel="prefetch" href="/assets/js/4.d42d4e55.js"><link rel="prefetch" href="/assets/js/40.3ed32e03.js"><link rel="prefetch" href="/assets/js/41.13f5f571.js"><link rel="prefetch" href="/assets/js/42.9651d9dd.js"><link rel="prefetch" href="/assets/js/43.722a52ed.js"><link rel="prefetch" href="/assets/js/44.48f9548c.js"><link rel="prefetch" href="/assets/js/45.8f6fd321.js"><link rel="prefetch" href="/assets/js/46.0f0e6f17.js"><link rel="prefetch" href="/assets/js/47.5191e595.js"><link rel="prefetch" href="/assets/js/48.65b23bee.js"><link rel="prefetch" href="/assets/js/49.070c9087.js"><link rel="prefetch" href="/assets/js/50.d7bbcd0d.js"><link rel="prefetch" href="/assets/js/51.47cf69af.js"><link rel="prefetch" href="/assets/js/52.567e390a.js"><link rel="prefetch" href="/assets/js/53.08aad0ed.js"><link rel="prefetch" href="/assets/js/54.c9d7cb57.js"><link rel="prefetch" href="/assets/js/55.36a353a8.js"><link rel="prefetch" href="/assets/js/56.7ebe28dc.js"><link rel="prefetch" href="/assets/js/57.dd4f1001.js"><link rel="prefetch" href="/assets/js/58.0975f4ac.js"><link rel="prefetch" href="/assets/js/59.b7f0817c.js"><link rel="prefetch" href="/assets/js/6.62085399.js"><link rel="prefetch" href="/assets/js/60.26be6d3a.js"><link rel="prefetch" href="/assets/js/61.5a2196d0.js"><link rel="prefetch" href="/assets/js/62.4a4944dd.js"><link rel="prefetch" href="/assets/js/63.0e22b42c.js"><link rel="prefetch" href="/assets/js/64.b63fb7e2.js"><link rel="prefetch" href="/assets/js/65.acfef4a6.js"><link rel="prefetch" href="/assets/js/66.e8f72da5.js"><link rel="prefetch" href="/assets/js/67.a2d1edfe.js"><link rel="prefetch" href="/assets/js/68.8e7100d2.js"><link rel="prefetch" href="/assets/js/69.325033fc.js"><link rel="prefetch" href="/assets/js/7.8627039b.js"><link rel="prefetch" href="/assets/js/70.af850aff.js"><link rel="prefetch" href="/assets/js/71.07384996.js"><link rel="prefetch" href="/assets/js/72.db1629e9.js"><link rel="prefetch" href="/assets/js/73.9d841664.js"><link rel="prefetch" href="/assets/js/74.f3e625d5.js"><link rel="prefetch" href="/assets/js/75.d5af7d1c.js"><link rel="prefetch" href="/assets/js/76.1e1d81a0.js"><link rel="prefetch" href="/assets/js/77.150fb558.js"><link rel="prefetch" href="/assets/js/78.0d69b452.js"><link rel="prefetch" href="/assets/js/79.7c775c02.js"><link rel="prefetch" href="/assets/js/8.a65d41a3.js"><link rel="prefetch" href="/assets/js/80.77151ec0.js"><link rel="prefetch" href="/assets/js/81.5d3f2b7c.js"><link rel="prefetch" href="/assets/js/82.1f2c2bf0.js"><link rel="prefetch" href="/assets/js/83.f622ab08.js"><link rel="prefetch" href="/assets/js/84.8286b456.js"><link rel="prefetch" href="/assets/js/85.54a731ee.js"><link rel="prefetch" href="/assets/js/86.fd267f8e.js"><link rel="prefetch" href="/assets/js/87.c3d3fa5e.js"><link rel="prefetch" href="/assets/js/88.9e1d6ea8.js"><link rel="prefetch" href="/assets/js/89.57a623bc.js"><link rel="prefetch" href="/assets/js/9.ac50c66b.js"><link rel="prefetch" href="/assets/js/90.c2249466.js"><link rel="prefetch" href="/assets/js/91.e0dd7d84.js"><link rel="prefetch" href="/assets/js/92.d6e1979e.js"><link rel="prefetch" href="/assets/js/93.cacaa19b.js"><link rel="prefetch" href="/assets/js/94.5c3c93df.js"><link rel="prefetch" href="/assets/js/95.02bc29e4.js"><link rel="prefetch" href="/assets/js/96.50f5519c.js"><link rel="prefetch" href="/assets/js/97.d2494456.js"><link rel="prefetch" href="/assets/js/98.0d05a514.js"><link rel="prefetch" href="/assets/js/99.9896fe30.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>duc</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>duc's blog</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2018 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="DUC'S Blog" class="logo"> <span class="site-name">DUC'S Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/技术/" class="nav-link"><i class="undefined"></i>
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计划/" class="nav-link"><i class="undefined"></i>
+  计划
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/duc-cnZj" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    duc
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>126</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>129</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/技术/" class="nav-link"><i class="undefined"></i>
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计划/" class="nav-link"><i class="undefined"></i>
+  计划
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/duc-cnZj" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>haproxy 笔记</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2018 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">haproxy 笔记</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>duc</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/6/30</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/2021/haproxy.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>高可用</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="为什么"><a href="#为什么" class="header-anchor">#</a> 为什么？</h2> <p>高可用的k8s的所有节点需要对外暴露80,443(ingress bare 部署需要)，这些node需要一个lb，然后将域名解析到这个lb上保证高可用。</p> <p>haproxy 很好的提供了四层七层代理服务。</p> <h3 id="为什么不用nginx"><a href="#为什么不用nginx" class="header-anchor">#</a> 为什么不用nginx</h3> <p>haproxy专门做这个，性能更好。</p> <p>nginx:</p> <div class="language-nginx line-numbers-mode"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">stream</span></span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">upstream</span> k8s443</span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">server</span> 192.168.xx.xx:30335</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">server</span> 192.168.xx.xx:30335</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_pass</span> k8s443</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token directive"><span class="token keyword">upstream</span> k8s80</span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">server</span> 192.168.xx.xx:30345</span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">server</span> 192.168.xx.xx:30345</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+  
+  <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forward_for</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_pass</span> http://k8s80</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h2 id="haproxy-配置"><a href="#haproxy-配置" class="header-anchor">#</a> haproxy 配置</h2> <blockquote><p><a href="http://www.manongjc.com/detail/23-usbrvnnuobpgdpn.html" target="_blank" rel="noopener noreferrer">网上找的一份比较全的配置<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>global   # 全局参数的设置
+     log 127.0.0.1 local0 info
+     # log语法：log [max_level_1]
+     # 全局的日志配置，使用log关键字，指定使用127.0.0.1上的syslog服务中的local0日志设备，
+     记录日志等级为info的日志
+     chroot /var/lib/haproxy
+     #修改haproxy的工作目录至指定的目录并在放弃权限之前执行chroot()操作，可以提升haproxy的安全级别，
+     #不过需要注意的是要确保指定的目录为空目录且任何用户均不能有写权限；
+     user haproxy
+     group haproxy
+     # 设置运行haproxy的用户和组，也可使用uid，gid关键字替代之
+     daemon
+     # 以守护进程的方式运行
+     nbproc 16
+     # 设置haproxy启动时的进程数，根据官方文档的解释，我将其理解为：该值的设置应该和服务
+     #器的CPU核心数一致，即常见的2颗8核心CPU的服务器，即共有16核心，则可以将其值设置为：
+     #&lt;=16 ，创建多个进程数，可以减少每个进程的任务队列，但是过多的进程数也可能会导致进程
+     #的崩溃。这里我设置为16
+     maxconn 4096
+     # 定义每个haproxy进程的最大连接数 ，由于每个连接包括一个客户端和一个服务器端，所以单
+     #个进程的TCP会话最大数目将是该值的两倍。
+     #ulimit -n 65536
+     # 设置最大打开的文件描述符数，在1.4的官方文档中提示，该值会自动计算，所以不建议进行
+     #设置
+     pidfile /var/run/haproxy.pid
+     # 定义haproxy的pid
+
+
+defaults # 默认部分的定义
+     mode http
+     # mode语法：mode {http|tcp|health} 。http是七层模式，tcp是四层模式，health是健康检测
+     #，返回OK
+     log 127.0.0.1 local3 err
+     # 使用127.0.0.1上的syslog服务的local3设备记录错误信息
+     retries 3
+     # 定义连接后端服务器的失败重连次数，连接失败次数超过此值后将会将对应后端服务器标记为
+     #不可用
+     option httplog
+     # 启用日志记录HTTP请求，默认haproxy日志记录是不记录HTTP请求的，只记录“时间[Jan 5 13
+     #:23:46] 日志服务器[127.0.0.1] 实例名已经pid[haproxy[25218]] 信息[Proxy http_80_in s
+     #topped.]”，日志格式很简单。
+     option redispatch
+     # 当使用了cookie时，haproxy将会将其请求的后端服务器的serverID插入到cookie中，以保证
+     #会话的SESSION持久性；而此时，如果后端的服务器宕掉了，但是客户端的cookie是不会刷新的
+     #，如果设置此参数，将会将客户的请求强制定向到另外一个后端server上，以保证服务的正常
+     option abortonclose
+     # 当服务器负载很高的时候，自动结束掉当前队列处理比较久的链接
+     option dontlognull
+     # 启用该项，日志中将不会记录空连接。所谓空连接就是在上游的负载均衡器或者监控系统为了
+     #探测该服务是否存活可用时，需要定期的连接或者获取某一固定的组件或页面，或者探测扫描
+     #端口是否在监听或开放等动作被称为空连接；官方文档中标注，如果该服务上游没有其他的负
+     #载均衡器的话，建议不要使用该参数，因为互联网上的恶意扫描或其他动作就不会被记录下来
+     option httpclose
+     # 这个参数我是这样理解的：使用该参数，每处理完一个request时，haproxy都会去检查http头
+     #中的Connection的值，如果该值不是close，haproxy将会将其***，如果该值为空将会添加为：
+     #Connection: close。使每个客户端和服务器端在完成一次传输后都会主动关闭TCP连接。与该
+     #参数类似的另外一个参数是“option forceclose”，该参数的作用是强制关闭对外的服务通道
+     #，因为有的服务器端收到Connection: close时，也不会自动关闭TCP连接，如果客户端也不关
+     #闭，连接就会一直处于打开，直到超时。
+     contimeout 5000
+     # 设置成功连接到一台服务器的最长等待时间，默认单位是毫秒，新版本的haproxy使用timeout
+     #connect替代，该参数向后兼容
+     clitimeout 3000
+     # 设置连接客户端发送数据时的成功连接最长等待时间，默认单位是毫秒，新版本haproxy使用
+     #timeout client替代。该参数向后兼容
+     srvtimeout 3000
+     # 设置服务器端回应客户度数据发送的最长等待时间，默认单位是毫秒，新版本haproxy使用
+     #timeout server替代。该参数向后兼容
+
+listen status
+     # 定义一个名为status的部分，可以在listen指令指定的区域中定义匹配规则和后端服务器ip，
+     #相当于需要在其中配置frontend，backend的功能。一般做tcp转发比较合适，不用太多的规则
+     #匹配。
+     bind 0.0.0.0:1080
+     # 定义监听的套接字
+     mode http
+     # 定义为HTTP模式
+     log global
+     # 继承global中log的定义
+     stats refresh 30s
+     # stats是haproxy的一个统计页面的套接字，该参数设置统计页面的刷新间隔为30s
+     stats uri /admin?stats
+     # 设置统计页面的uri为/admin?stats
+     stats realm Private lands
+     # 设置统计页面认证时的提示内容
+     stats auth admin:password
+     # 设置统计页面认证的用户和密码，如果要设置多个，另起一行写入即可
+     stats hide-version
+     # 隐藏统计页面上的haproxy版本信息
+
+
+frontend http_80_in # 定义一个名为http_80_in的前端部分，haproxy会监听bind的端口
+     bind 0.0.0.0:80
+     # http_80_in定义前端部分监听的套接字
+     mode http
+     # 定义为HTTP模式
+     log global
+     # 继承global中log的定义
+     option forwardfor
+     # 启用X-Forwarded-For，在requests头部插入客户端IP发送给后端的server，使后端server获
+     #取到客户端的真实IP
+     acl static_down nbsrv(static_server) lt 1
+     # 定义一个名叫static_down的acl，当backend static_sever中存活机器数小于1时会被匹配到
+     acl php_web url_reg /*.php$
+     #acl php_web path_end .php
+     # 定义一个名叫php_web的acl，当请求的url末尾是以.php结尾的，将会被匹配到，上面两种写
+     #法任选其一
+     acl static_web url_reg /*.(css|jpg|png|jpeg|js|gif)$
+     #acl static_web path_end .gif .png .jpg .css .js .jpeg
+     # 定义一个名叫static_web的acl，当请求的url末尾是以.css、.jpg、.png、.jpeg、.js、.gif
+     结尾的，将会被匹配到，上面两种写法任选其一
+     use_backend php_server if static_down
+     # 如果满足策略static_down时，就将请求交予backend php_server
+     use_backend php_server if php_web
+     # 如果满足策略php_web时，就将请求交予backend php_server
+     use_backend static_server if static_web
+     # 如果满足策略static_web时，就将请求交予backend static_server
+
+
+backend php_server #定义一个名为php_server的后端部分，frontend定义的请求会到到这里处理
+     mode http
+     # 设置为http模式
+     balance source
+     # 设置haproxy的调度算法为源地址hash
+     cookie SERVERID
+     # 允许向cookie插入SERVERID，每台服务器的SERVERID可在下面使用cookie关键字定义
+     option httpchk GET /test/index.php
+     # 开启对后端服务器的健康检测，通过GET /test/index.php来判断后端服务器的健康情况
+     server php_server_1 10.12.25.68:80 cookie 1 check inter 2000 rise 3 fall 3 weight 2
+     server php_server_2 10.12.25.72:80 cookie 2 check inter 2000 rise 3 fall 3 weight 1
+     server php_server_bak 10.12.25.79:80 cookie 3 check inter 1500 rise 3 fall 3 backup
+     # server语法：server [:port] [param*]
+     # 使用server关键字来设置后端服务器；为后端服务器所设置的内部名称[php_server_1]，该名
+     #称将会呈现在日志或警报中、后端服务器的IP地址，支持端口映射[10.12.25.68:80]、指定该
+     #服务器的SERVERID为1[cookie 1]、接受健康监测[check]、监测的间隔时长，单位毫秒[inter
+     #2000]、监测正常多少次后被认为后端服务器是可用的[rise 3]、监测失败多少次后被认为后端
+     #服务器是不可用的[fall 3]、分发的权重[weight 2]、最为备份用的后端服务器，当正常的服
+     #务器全部都宕机后，才会启用备份服务器[backup]
+
+
+backend static_server
+     mode http
+     option httpchk GET /test/index.html
+     server static_server_1 10.12.25.83:80 cookie 3 check inter 2000 rise 3 fall 3
+
+
+健康监测
+1、通过监听端口进行健康检测
+这种检测方式，haproxy只会去检查后端server的端口，并不能保证服务的真正可用。
+listen http_proxy 0.0.0.0:80
+        mode http
+        cookie SERVERID
+        balance roundrobin
+        option httpchk
+        server web1 192.168.1.1:80 cookie server01 check
+        server web2 192.168.1.2:80 cookie server02 check inter 500 rise 1 fall 2
+
+2、通过URI获取进行健康检测
+这种检测方式，是用过去GET后端server的的web页面，基本上可以代表后端服务的可用性。
+listen http_proxy 0.0.0.0:80
+        mode http
+        cookie SERVERID
+        balance roundrobin
+        option httpchk GET /index.html
+        server web1 192.168.1.1:80 cookie server01 check
+        server web2 192.168.1.2:80 cookie server02 check inter 500 rise 1 fall 2
+
+3、通过request获取的头部信息进行匹配进行健康检测
+这种检测方式，则是基于高级，精细的一些监测需求。通过对后端服务访问的头部信息进行匹配检测。
+listen http_proxy 0.0.0.0:80
+        mode http
+        cookie SERVERID
+        balance roundrobin
+        option httpchk HEAD /index.jsp HTTP/1.1\r\nHost:\ www.xxx.com
+        server web1 192.168.1.1:80 cookie server01 check
+        server web2 192.168.1.2:80 cookie server02 check inter 500 rise 1 fall 2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新于: </span> <span class="time">2021/6/30 下午12:02:47</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.4406823a.js" defer></script><script src="/assets/js/5.4318616b.js" defer></script><script src="/assets/js/1.84a83f87.js" defer></script><script src="/assets/js/130.6c871cc7.js" defer></script>
+  </body>
+</html>

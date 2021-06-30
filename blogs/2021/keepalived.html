@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>keepalived 笔记 | DUC&#39;S Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="何时才能暴富">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.4406823a.js" as="script"><link rel="preload" href="/assets/js/5.4318616b.js" as="script"><link rel="preload" href="/assets/js/1.84a83f87.js" as="script"><link rel="preload" href="/assets/js/133.08de45fb.js" as="script"><link rel="prefetch" href="/assets/js/10.73e57743.js"><link rel="prefetch" href="/assets/js/100.3f738022.js"><link rel="prefetch" href="/assets/js/101.91aff247.js"><link rel="prefetch" href="/assets/js/102.bff5a109.js"><link rel="prefetch" href="/assets/js/103.ceb6d3ab.js"><link rel="prefetch" href="/assets/js/104.ce1fc1f9.js"><link rel="prefetch" href="/assets/js/105.9f3057a8.js"><link rel="prefetch" href="/assets/js/106.1334d6c0.js"><link rel="prefetch" href="/assets/js/107.6cb032ae.js"><link rel="prefetch" href="/assets/js/108.dc2c611e.js"><link rel="prefetch" href="/assets/js/109.df05d080.js"><link rel="prefetch" href="/assets/js/11.ac6ff206.js"><link rel="prefetch" href="/assets/js/110.c64578bb.js"><link rel="prefetch" href="/assets/js/111.df5d9b82.js"><link rel="prefetch" href="/assets/js/112.5a5f5028.js"><link rel="prefetch" href="/assets/js/113.2b6e8df0.js"><link rel="prefetch" href="/assets/js/114.c51a1017.js"><link rel="prefetch" href="/assets/js/115.7fd8a9c2.js"><link rel="prefetch" href="/assets/js/116.5c502ac0.js"><link rel="prefetch" href="/assets/js/117.cb048c7c.js"><link rel="prefetch" href="/assets/js/118.49d674f2.js"><link rel="prefetch" href="/assets/js/119.692b6df3.js"><link rel="prefetch" href="/assets/js/12.963ed642.js"><link rel="prefetch" href="/assets/js/120.590f5c31.js"><link rel="prefetch" href="/assets/js/121.54def3d0.js"><link rel="prefetch" href="/assets/js/122.0cd81229.js"><link rel="prefetch" href="/assets/js/123.3ef3e1c2.js"><link rel="prefetch" href="/assets/js/124.8abe8d01.js"><link rel="prefetch" href="/assets/js/125.02023632.js"><link rel="prefetch" href="/assets/js/126.f795e765.js"><link rel="prefetch" href="/assets/js/127.bbebf654.js"><link rel="prefetch" href="/assets/js/128.ba59b232.js"><link rel="prefetch" href="/assets/js/129.3cf88eb3.js"><link rel="prefetch" href="/assets/js/13.e57131a8.js"><link rel="prefetch" href="/assets/js/130.6c871cc7.js"><link rel="prefetch" href="/assets/js/131.9ac8da13.js"><link rel="prefetch" href="/assets/js/132.e9542c4b.js"><link rel="prefetch" href="/assets/js/134.6297b6a2.js"><link rel="prefetch" href="/assets/js/135.44a2bc13.js"><link rel="prefetch" href="/assets/js/136.ea349ec9.js"><link rel="prefetch" href="/assets/js/14.6219dafd.js"><link rel="prefetch" href="/assets/js/15.cfc96aa0.js"><link rel="prefetch" href="/assets/js/16.e4d2cb93.js"><link rel="prefetch" href="/assets/js/17.cae163ec.js"><link rel="prefetch" href="/assets/js/18.63da70da.js"><link rel="prefetch" href="/assets/js/19.7ef0f711.js"><link rel="prefetch" href="/assets/js/20.d7b2a471.js"><link rel="prefetch" href="/assets/js/21.56a5d027.js"><link rel="prefetch" href="/assets/js/22.81de3243.js"><link rel="prefetch" href="/assets/js/23.4561504d.js"><link rel="prefetch" href="/assets/js/24.92762dc4.js"><link rel="prefetch" href="/assets/js/25.32df244b.js"><link rel="prefetch" href="/assets/js/26.bf30e321.js"><link rel="prefetch" href="/assets/js/27.d2399d0a.js"><link rel="prefetch" href="/assets/js/28.54a6c31b.js"><link rel="prefetch" href="/assets/js/29.22894a7e.js"><link rel="prefetch" href="/assets/js/3.6169f2c5.js"><link rel="prefetch" href="/assets/js/30.2cf60755.js"><link rel="prefetch" href="/assets/js/31.1bd08c27.js"><link rel="prefetch" href="/assets/js/32.a68a3159.js"><link rel="prefetch" href="/assets/js/33.32ffd6a0.js"><link rel="prefetch" href="/assets/js/34.f1b747e6.js"><link rel="prefetch" href="/assets/js/35.cee06945.js"><link rel="prefetch" href="/assets/js/36.e5810799.js"><link rel="prefetch" href="/assets/js/37.e34fea73.js"><link rel="prefetch" href="/assets/js/38.87ebc594.js"><link rel="prefetch" href="/assets/js/39.825e963b.js"><link rel="prefetch" href="/assets/js/4.d42d4e55.js"><link rel="prefetch" href="/assets/js/40.3ed32e03.js"><link rel="prefetch" href="/assets/js/41.13f5f571.js"><link rel="prefetch" href="/assets/js/42.9651d9dd.js"><link rel="prefetch" href="/assets/js/43.722a52ed.js"><link rel="prefetch" href="/assets/js/44.48f9548c.js"><link rel="prefetch" href="/assets/js/45.8f6fd321.js"><link rel="prefetch" href="/assets/js/46.0f0e6f17.js"><link rel="prefetch" href="/assets/js/47.5191e595.js"><link rel="prefetch" href="/assets/js/48.65b23bee.js"><link rel="prefetch" href="/assets/js/49.070c9087.js"><link rel="prefetch" href="/assets/js/50.d7bbcd0d.js"><link rel="prefetch" href="/assets/js/51.47cf69af.js"><link rel="prefetch" href="/assets/js/52.567e390a.js"><link rel="prefetch" href="/assets/js/53.08aad0ed.js"><link rel="prefetch" href="/assets/js/54.c9d7cb57.js"><link rel="prefetch" href="/assets/js/55.36a353a8.js"><link rel="prefetch" href="/assets/js/56.7ebe28dc.js"><link rel="prefetch" href="/assets/js/57.dd4f1001.js"><link rel="prefetch" href="/assets/js/58.0975f4ac.js"><link rel="prefetch" href="/assets/js/59.b7f0817c.js"><link rel="prefetch" href="/assets/js/6.62085399.js"><link rel="prefetch" href="/assets/js/60.26be6d3a.js"><link rel="prefetch" href="/assets/js/61.5a2196d0.js"><link rel="prefetch" href="/assets/js/62.4a4944dd.js"><link rel="prefetch" href="/assets/js/63.0e22b42c.js"><link rel="prefetch" href="/assets/js/64.b63fb7e2.js"><link rel="prefetch" href="/assets/js/65.acfef4a6.js"><link rel="prefetch" href="/assets/js/66.e8f72da5.js"><link rel="prefetch" href="/assets/js/67.a2d1edfe.js"><link rel="prefetch" href="/assets/js/68.8e7100d2.js"><link rel="prefetch" href="/assets/js/69.325033fc.js"><link rel="prefetch" href="/assets/js/7.8627039b.js"><link rel="prefetch" href="/assets/js/70.af850aff.js"><link rel="prefetch" href="/assets/js/71.07384996.js"><link rel="prefetch" href="/assets/js/72.db1629e9.js"><link rel="prefetch" href="/assets/js/73.9d841664.js"><link rel="prefetch" href="/assets/js/74.f3e625d5.js"><link rel="prefetch" href="/assets/js/75.d5af7d1c.js"><link rel="prefetch" href="/assets/js/76.1e1d81a0.js"><link rel="prefetch" href="/assets/js/77.150fb558.js"><link rel="prefetch" href="/assets/js/78.0d69b452.js"><link rel="prefetch" href="/assets/js/79.7c775c02.js"><link rel="prefetch" href="/assets/js/8.a65d41a3.js"><link rel="prefetch" href="/assets/js/80.77151ec0.js"><link rel="prefetch" href="/assets/js/81.5d3f2b7c.js"><link rel="prefetch" href="/assets/js/82.1f2c2bf0.js"><link rel="prefetch" href="/assets/js/83.f622ab08.js"><link rel="prefetch" href="/assets/js/84.8286b456.js"><link rel="prefetch" href="/assets/js/85.54a731ee.js"><link rel="prefetch" href="/assets/js/86.fd267f8e.js"><link rel="prefetch" href="/assets/js/87.c3d3fa5e.js"><link rel="prefetch" href="/assets/js/88.9e1d6ea8.js"><link rel="prefetch" href="/assets/js/89.57a623bc.js"><link rel="prefetch" href="/assets/js/9.ac50c66b.js"><link rel="prefetch" href="/assets/js/90.c2249466.js"><link rel="prefetch" href="/assets/js/91.e0dd7d84.js"><link rel="prefetch" href="/assets/js/92.d6e1979e.js"><link rel="prefetch" href="/assets/js/93.cacaa19b.js"><link rel="prefetch" href="/assets/js/94.5c3c93df.js"><link rel="prefetch" href="/assets/js/95.02bc29e4.js"><link rel="prefetch" href="/assets/js/96.50f5519c.js"><link rel="prefetch" href="/assets/js/97.d2494456.js"><link rel="prefetch" href="/assets/js/98.0d05a514.js"><link rel="prefetch" href="/assets/js/99.9896fe30.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>duc</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>duc's blog</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2018 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="DUC'S Blog" class="logo"> <span class="site-name">DUC'S Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/技术/" class="nav-link"><i class="undefined"></i>
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计划/" class="nav-link"><i class="undefined"></i>
+  计划
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/duc-cnZj" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    duc
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>126</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>129</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/技术/" class="nav-link"><i class="undefined"></i>
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计划/" class="nav-link"><i class="undefined"></i>
+  计划
+</a></li><li class="dropdown-item"><!----> <a href="/categories/未来/" class="nav-link"><i class="undefined"></i>
+  未来
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/duc-cnZj" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>keepalived 笔记</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>duc</span>
+            
+          <span data-v-4e82dffc>2018 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">keepalived 笔记</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>duc</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2021/6/30</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/2021/keepalived.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>高可用</span></i></div></div> <div class="theme-reco-content content__default"><blockquote><p>最近研究k8s高可用部署时用到这个工具，随便做下笔记。</p> <p>高可用：两台业务系统启动着相同的服务，如果有一台故障，另一台自动接管,我们将将这个称之为高可用。</p></blockquote> <h2 id="为什么用它"><a href="#为什么用它" class="header-anchor">#</a> 为什么用它？</h2> <p>k8s需要lb+keepalived来保证高可用的api-server，具体是两台机器安装nginx、keepalived，nginx stream 代理3个master节点。keepalived一个 master 一个 backup 提供 vip。</p> <h2 id="是什么"><a href="#是什么" class="header-anchor">#</a> 是什么？</h2> <p>Keepalived起初是为LVS设计的，专门用来监控集群系统中各个服务节点的状态，它根据TCP/IP参考模型的第三、第四层、第五层交换机制检测每个服务节点的状态，如果某个服务器节点出现异常，或者工作出现故障，Keepalived将检测到，并将出现的故障的服务器节点从集群系统中剔除，这些工作全部是自动完成的，不需要人工干涉，需要人工完成的只是修复出现故障的服务节点。</p> <p>后来Keepalived又加入了VRRP的功能，VRRP（Vritrual Router Redundancy Protocol,虚拟路由冗余协议)出现的目的是解决静态路由出现的单点故障问题，通过VRRP可以实现网络不间断稳定运行，因此Keepalvied 一方面具有服务器状态检测和故障隔离功能，另外一方面也有HA cluster功能，下面介绍一下VRRP协议实现的过程。</p> <h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <p><code>/etc/keepalived/keepalived.conf</code></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>global_defs {
+   notification_email {  #指定keepalived在发生切换时需要发送email到的对象，一行一个
+		monitor@3evip.cn
+   }
+   notification_email_from monitor@3evip.cn #指定发件人
+   smtp_server stmp.3evip.cn #指定smtp服务器地址
+   smtp_connect_timeout 30 #指定smtp连接超时时间
+   router_id LVS_DEVEL #运行keepalived机器的一个标识
+}
+
+# 这块基本用不到，没怎么学
+vrrp_sync_group VG_1{ #监控多个网段的实例
+	group {
+		inside_network #实例名
+		outside_network
+	}
+	notify_master /path/xx.sh #指定当切换到master时，执行的脚本
+	netify_backup /path/xx.sh #指定当切换到backup时，执行的脚本
+	notify_fault &quot;path/xx.sh VG_1&quot; #故障时执行的脚本
+	notify /path/xx.sh 
+	smtp_alert #使用global_defs中提供的邮件地址和smtp服务器发送邮件通知
+}
+
+vrrp_instance inside_network {
+    state BACKUP #指定那个为master，那个为backup，如果设置了nopreempt这个值不起作用，主备考priority决定
+    interface eth0 #设置实例绑定的网卡，ifconfig 查看网卡
+    dont_track_primary #忽略vrrp的interface错误（默认不设置）
+    track_interface{ #设置额外的监控，里面那个网卡出现问题都会切换
+		eth0
+		eth1
+    }
+    mcast_src_ip #发送多播包的地址，如果不设置默认使用绑定网卡的primary ip
+    garp_master_delay #在切换到master状态后，延迟进行gratuitous ARP请求
+    virtual_router_id 50 #VPID标记，主备必须一样
+    priority 100 #优先级，高优先级竞选为master
+    advert_int 1 #检查间隔，默认1秒
+    nopreempt #设置为不抢占 注：这个配置只能设置在backup主机上，而且这个主机优先级要比另外一台高
+    preempt_delay #抢占延时，默认5分钟
+    debug #debug级别
+    authentication { #设置认证
+        auth_type PASS #认证方式
+        auth_pass 111111 #认证密码
+    }
+    virtual_ipaddress { #设置vip
+        192.168.36.200
+    }
+}
+
+# 这块也用不到
+virtual_server 192.168.36.99 80 {
+    delay_loop 6 #健康检查时间间隔
+    lb_algo rr  #lvs调度算法rr|wrr|lc|wlc|lblc|sh|dh
+    lb_kind DR  #负载均衡转发规则NAT|DR|RUN
+    persistence_timeout 5 #会话保持时间
+    protocol TCP #使用的协议
+    persistence_granularity &lt;NETMASK&gt; #lvs会话保持粒度
+    virtualhost &lt;string&gt; #检查的web服务器的虚拟主机（host：头）    
+    sorry_server&lt;IPADDR&gt; &lt;port&gt; #备用机，所有realserver失效后启用
+	real_server 192.168.200.5 23 {
+            weight 1 #默认为1,0为失效
+            inhibit_on_failure #在服务器健康检查失效时，将其设为0，而不是直接从ipvs中删除 
+            notify_up &lt;string&gt; | &lt;quoted-string&gt; #在检测到server up后执行脚本
+            notify_down &lt;string&gt; | &lt;quoted-string&gt; #在检测到server down后执行脚本
+			TCP_CHECK {
+				connect_timeout 3 #连接超时时间
+				nb_get_retry 3 #重连次数
+				delay_before_retry 3 #重连间隔时间
+				connect_port 23  健康检查的端口的端口
+				bindto &lt;ip&gt;   
+			}
+			HTTP_GET | SSL_GET{
+				url{ #检查url，可以指定多个
+						path /
+						digest &lt;string&gt; #检查后的摘要信息
+						status_code 200 #检查的返回状态码
+				}
+				connect_port &lt;port&gt; 
+				bindto &lt;IPADD&gt;
+				connect_timeout 5
+				nb_get_retry 3
+				delay_before_retry 2
+			}
+
+			SMTP_CHECK{
+					host{
+						connect_ip &lt;IP ADDRESS&gt;
+						connect_port &lt;port&gt; #默认检查25端口
+						bindto &lt;IP ADDRESS&gt;
+					}
+					connect_timeout 5
+					retry 3
+					delay_before_retry 2
+					helo_name &lt;string&gt; | &lt;quoted-string&gt; #smtp helo请求命令参数，可选
+			}
+			MISC_CHECK{
+					misc_path &lt;string&gt; | &lt;quoted-string&gt; #外部脚本路径
+					misc_timeout #脚本执行超时时间
+					misc_dynamic #如设置该项，则退出状态码会用来动态调整服务器的权重，返回0 正常，不修改；返回1，检查失败，权重改为0；返回2-255，正常，权重设置为：返回状态码-2
+			}
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br></div></div><h2 id="测试"><a href="#测试" class="header-anchor">#</a> 测试</h2> <p>两台机器一台 master 一台 backup，<code>tail -f /var/log/messages</code>, 关掉其中一台的keepalived，查看 <code>ip addr</code>，vip 是否切换。</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新于: </span> <span class="time">2021/6/30 下午12:02:47</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.4406823a.js" defer></script><script src="/assets/js/5.4318616b.js" defer></script><script src="/assets/js/1.84a83f87.js" defer></script><script src="/assets/js/133.08de45fb.js" defer></script>
+  </body>
+</html>
