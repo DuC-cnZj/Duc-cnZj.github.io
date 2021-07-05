@@ -18,7 +18,7 @@ publish: true
    ```bash
    ## 查看健康状态
    PKI_DIR=/etc/kubernetes/pki
-   ECTD_API=3 etcdctl  --cacert=$PKI_DIR/etcd/ca.crt  --cert=$PKI_DIR/etcd/server.crt --key=$PKI_DIR/etcd/server.key  -endpoints=https://127.0.0.1:2379 endpoint health
+   ECTD_API=3 etcdctl  --cacert=$PKI_DIR/etcd/ca.crt  --cert=$PKI_DIR/etcd/server.crt --key=$PKI_DIR/etcd/server.key  --endpoints=https://127.0.0.1:2379 endpoint health
    
    ## 创建备份（在一台etcd节点上）
    PKI_DIR=/etc/kubernetes/pki
