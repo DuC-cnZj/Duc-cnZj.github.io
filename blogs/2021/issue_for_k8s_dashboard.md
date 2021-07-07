@@ -10,4 +10,6 @@ tags:
 publish: true
 ---
 
-https://github.com/kubernetes/dashboard/issues/6233
+[https://github.com/kubernetes/dashboard/issues/6233](https://github.com/kubernetes/dashboard/issues/6233)
+
+![issue](../images/image-20210707105402710.png)
