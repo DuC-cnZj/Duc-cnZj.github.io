@@ -22,6 +22,7 @@ publish: true
 2. calico 也有上面的问题, 不过默认网段是 `10.244.0.0/16`
 3. setenforce 和 swap 分区未关闭，导致集群起不来或者ingress不通
 4. 国内镜像问题（虽然这个早就知道怎么解决，但还是来吐槽下不只是k8s本身需要的镜像，其他的也大多都是需要科学上网才能拉取的）
+5. 虚拟机一定要加 `--apiserver-advertise-address` 不然会出现奇奇怪怪的问题，比如pod一直pending，cluster 10.92.0.1 连接不上
 
 ## 总结
 
