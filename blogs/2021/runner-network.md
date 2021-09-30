@@ -1,5 +1,5 @@
 ---
-title: gitlab runner 网络问题
+title: gitlab runner buil 镜像网络问题
 date: '2021-06-30 20:01:49'
 sidebar: false
 categories:
