@@ -12,6 +12,7 @@ tags:
 publish: true
 ---
 
+
 ## minio
 
 `http.CanonicalHeaderKey` 返回规范的 http 头名称
@@ -451,4 +452,141 @@ func main() {
 }
 ```
 
+## k8s/sample-controller
+
+```go
+func SetupSignalHandler() (stopCh <-chan struct{}) {
+	close(onlyOneSignalHandler) // panics when called twice
+
+	stop := make(chan struct{})
+	c := make(chan os.Signal, 2)
+	signal.Notify(c, shutdownSignals...)
+	go func() {
+		<-c
+		close(stop)
+		<-c
+		os.Exit(1) // second signal. Exit directly.
+	}()
+
+	return stop
+}
+```
+
+## Argo-cd
+
+```go
+func NewLoginRateLimiter(maxNumber int) func() (util.Closer, error) {
+	semaphore := semaphore.NewWeighted(int64(maxNumber))
+	return func() (util.Closer, error) {
+		if !semaphore.TryAcquire(1) {
+			log.Warnf("Exceeded number of concurrent login requests")
+			return nil, session.InvalidLoginErr
+		}
+		return util.NewCloser(func() error {
+			defer semaphore.Release(1)
+			return nil
+		}), nil
+	}
+}
+```
+
+## sharding(argo-cd) 分片
+
+```go
+package sharding
+
+import (
+	"fmt"
+	"hash/fnv"
+	"os"
+	"strconv"
+	"strings"
+
+	"github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
+)
+
+func InferShard() (int, error) {
+	hostname, err := os.Hostname()
+	if err != nil {
+		return 0, err
+	}
+	parts := strings.Split(hostname, "-")
+	if len(parts) == 0 {
+		return 0, fmt.Errorf("hostname should ends with shard number separated by '-' but got: %s", hostname)
+	}
+	shard, err := strconv.Atoi(parts[len(parts)-1])
+	if err != nil {
+		return 0, fmt.Errorf("hostname should ends with shard number separated by '-' but got: %s", hostname)
+	}
+	return shard, nil
+}
+
+// GetShardByID calculates cluster shard as `clusterSecret.UID % replicas count`
+func GetShardByID(id string, replicas int) int {
+	if id == "" {
+		return 0
+	} else {
+		h := fnv.New32a()
+		_, _ = h.Write([]byte(id))
+		return int(h.Sum32() % uint32(replicas))
+	}
+}
+
+func GetClusterFilter(replicas int, shard int) func(c *v1alpha1.Cluster) bool {
+	return func(c *v1alpha1.Cluster) bool {
+		clusterShard := 0
+		//  cluster might be nil if app is using invalid cluster URL, assume shard 0 in this case.
+		if c != nil {
+			if c.Shard != nil {
+				clusterShard = int(*c.Shard)
+			} else {
+				clusterShard = GetShardByID(c.ID, replicas)
+			}
+		}
+		return clusterShard == shard
+	}
+}
+
+```
+
+啊这。。。
+
+```go
+func IsValid(token string) bool {
+	return len(strings.SplitN(token, ".", 3)) == 3
+}
+```
+
+
+
+1. 协程 panic，程序会推出吗 `会`
+2. for select 一个closed的管道会进去吗 `会！必要时增加判断 `
+
+3. 要学会用
+    ```go
+    // 这样写
+    select {
+      case <-ctx.Done():
+      case ch<-msg:
+    }
+    
+    // 而不是, 这种写法会导致堵在 ch<-msg这里，使得 ctx.Done() 无效
+    select {
+      case <-ctx.Done():
+      default:
+        ch<-msg
+    }
+    ```
+
+
+
+## 把http.response.body在关闭前先清乾净可以达到重复使用增加四倍速度
+
+在看client-go 源码时发现，每次请求完就会清空 `resp.Body`, 查了下原因发现题目的结论
+
+![image-20211112183830405](../images/image-20211112183830405.png)
+
+https://www.evanlin.com/til-2016-03-29/
+
+https://blog.twofei.com/858/
 
