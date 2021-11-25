@@ -1,8 +1,7 @@
 ---
-title: 读那些知名golang项目源码笔记
+title: k8s informer
 date: '2021-11-26 02:04:38'
 sidebar: true
-sticky: 1
 categories:
  - 技术
 tags:
