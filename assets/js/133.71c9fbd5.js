@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[133],{913:function(t,e,n){"use strict";n.r(e);var s=n(12),i=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("因为阿里云服务器不再享受优惠，从原来每月9.9变成几百，经费不足，因此迁移到github。")])])}),[],!1,null,null,null);e.default=i.exports}}]);
