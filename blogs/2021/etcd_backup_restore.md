@@ -10,6 +10,12 @@ tags:
 publish: true
 ---
 
+## 2022-01-15 更新
+
+恢复的时候节点名称千万不要和之前一样！！！会报错的 ID mismatch！
+
+---
+
 > 参考 http://www.mydlq.club/article/74/
 >
 > https://zhuanlan.zhihu.com/p/281742226
