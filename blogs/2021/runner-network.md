@@ -1,5 +1,5 @@
 ---
-title: gitlab runner buil 镜像网络问题
+title: gitlab runner build 镜像网络问题
 date: '2021-06-30 20:01:49'
 sidebar: false
 categories:
@@ -9,6 +9,7 @@ tags:
  - network
  - docker
 publish: true
+sticky: 20
 ---
 
 
@@ -25,3 +26,5 @@ https://docs.gitlab.com/runner/configuration/advanced-configuration.html#helper-
 https://gitlab.com/gitlab-org/gitlab-runner/-/issues/3705
 https://github.com/projectcalico/calico/issues/2334
 https://docs.projectcalico.org/networking/mtu
+
+mtu 修改之后需要重启docker！！！
