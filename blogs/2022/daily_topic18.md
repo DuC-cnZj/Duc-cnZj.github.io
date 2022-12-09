@@ -9,6 +9,8 @@ tags:
 publish: true
 ---
 
+# k8s 每日一问 - kubelet 日志轮换，以及 resource 里面的 ephemeral-storage 文件大小是否会限制日志，可以看下文档，ephemeral-storage = log+file?
+
 [local-ephemeral-storage](https://kubernetes.io/zh-cn/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage)
 
 [日志](https://kubernetes.io/zh-cn/docs/concepts/cluster-administration/logging/#logging-at-the-node-level)
