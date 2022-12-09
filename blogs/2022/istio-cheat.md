@@ -1,7 +1,7 @@
 ---
 title: istio 速查表
 date: '2022-10-10 16:57:49'
-sidebar: false
+sidebar: true
 categories:
  - 技术
 tags:
