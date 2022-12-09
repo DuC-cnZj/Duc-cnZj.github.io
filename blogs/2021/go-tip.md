@@ -7,7 +7,7 @@ categories:
 tags:
  - golang
 publish: true
-sticky: 2
+# sticky: 2
 ---
 
 [golang 隐式转型](https://mp.weixin.qq.com/s/NCM-RrzxYiAUlAAYshdAaQ)

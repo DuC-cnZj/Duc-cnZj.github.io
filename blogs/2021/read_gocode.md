@@ -2,7 +2,7 @@
 title: 读那些知名golang项目源码笔记
 date: '2021-03-26 14:37:59'
 sidebar: true
-sticky: 1
+# sticky: 1
 categories:
  - 技术
 tags:
