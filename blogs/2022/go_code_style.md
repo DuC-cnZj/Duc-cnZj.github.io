@@ -7,7 +7,6 @@ categories:
 tags:
  - golang
 publish: true
-sticky: 3
 ---
 
 # go 代码风格指南

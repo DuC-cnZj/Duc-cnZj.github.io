@@ -7,7 +7,6 @@ categories:
 tags:
  - kubernetes
 publish: true
-sticky: 1
 ---
 
 # 给 kubernetes 提了 pr，吹一辈子！！
