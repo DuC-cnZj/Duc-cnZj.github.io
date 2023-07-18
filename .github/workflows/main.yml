@@ -11,15 +11,18 @@ jobs:
   build-and-deploy:
     env:
       NODE_OPTIONS: '--max_old_space_size=4096'
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       # 生成静态文件
       - name: Build
